@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 20px;
+            text-align:center;
+        }
+        th {
+            background-color:skyblue;
+        }
+         /* Styling for alternating rows */
+         tr:nth-child(odd) {
+            background-color: #f9f9f9; /* Light grey for odd rows */
+        }
+
+        tr:nth-child(even) {
+            background-color: #e0f7fa; /* Light blue for even rows */
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Customer Feedback Survey</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email Address</th>
+                <th>How Satisfied Are You with Our Services?</th>
+                <th>What Aspects of Our Service Did You Find Most Beneficial?</th>
+                <th>What Improvements or New Features Would You Like to See?</th>
+            </tr>
+        </thead>
+        <tbody id="feedbackTableBody">
+            <!-- Feedback rows will be dynamically added here -->
+        </tbody>
+    </table>
+
+    <script>
+        // Function to fetch and display feedback
+        async function loadFeedback() {
+            try {
+                const response = await fetch('http://localhost:8800/feedback/getFeedback');
+                const feedbackData = await response.json();
+
+                // Get the table body element where the rows will be added
+                const tableBody = document.getElementById('feedbackTableBody');
+                tableBody.innerHTML = ''; // Clear any previous rows
+
+                // Loop through the feedback data and create rows
+                feedbackData.forEach(feedback => {
+                    const row = document.createElement('tr');
+
+                    const nameCell = document.createElement('td');
+                    nameCell.textContent = feedback.name; // Add feedback name
+                    row.appendChild(nameCell);
+
+                    const emailCell = document.createElement('td');
+                    emailCell.textContent = feedback.email; // Add feedback email
+                    row.appendChild(emailCell);
+
+                    const satisfactionCell = document.createElement('td');
+                    satisfactionCell.textContent = feedback.question1; // Add satisfaction response
+                    row.appendChild(satisfactionCell);
+
+                    const experienceCell = document.createElement('td');
+                    experienceCell.textContent = feedback.question2; // Add beneficial aspects
+                    row.appendChild(experienceCell);
+
+                    const improvementsCell = document.createElement('td');
+                    improvementsCell.textContent = feedback.question3; // Add improvements or features
+                    row.appendChild(improvementsCell);
+
+                    // Append the row to the table body
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error fetching feedback:', error);
+                alert('Error fetching feedback data. Please try again later.');
+            }
+        }
+
+        // Load the feedback when the page loads
+        window.onload = loadFeedback;
+    </script>
+</body>
+</html>

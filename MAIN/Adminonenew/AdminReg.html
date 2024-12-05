@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+  body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: url('banner.jpg') no-repeat center center fixed; /* Replace with your background image */
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Form Container */
+    .form-container {
+        background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+        max-width: 400px;
+        width: 100%;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+    }
+
+    /* Heading */
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    /* Label Styling */
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    /* Input Fields */
+    input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px; /* Adjusted to make the corners rounded */
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+
+    /* Button Styling */
+    button {
+    width: 50%;               /* Button width */
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    display: block;           /* Makes the button a block element */
+    margin: 20px auto;        /* Centers the button horizontally */
+}
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 480px) {
+        .form-container {
+            width: 90%;
+            padding: 20px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Admin Registration Form</h2>
+    <form id="registrationForm">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+        <label for="mobilenumber">Mobile Number</label>
+        <input type="tel" id="mobilenumber" name="mobilenumber" placeholder="Enter your mobile number" 
+               pattern="[0-9]{10}" required>
+        <small id="mobileError" style="color: red; display: none;">Please enter exactly 10 digits.</small>
+    
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Choose a username" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Create a password" required>
+
+        <button type="button" id="registerButton">Register</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('registerButton').addEventListener('click', async () => {
+        const form = document.getElementById('registrationForm');
+        const formData = {
+            fullName: document.getElementById('fullname').value,
+            phoneNumber: document.getElementById('mobilenumber').value, // Use 'phoneNumber' instead of 'mobileNumber'
+            username: document.getElementById('username').value,
+            email: document.getElementById('email').value,
+            password: document.getElementById('password').value,
+        };
+
+
+        try {
+            const response = await fetch('http://localhost:8800/admin/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                const message = await response.text();
+                alert(message); // Success message from the server
+                form.reset(); // Clear the form
+
+                window.location.href = 'Adminlogin.html';  // Adjust the login page URL as needed
+
+            } else {
+                const error = await response.text();
+                alert(`Error: ${error}`); // Error message from the server
+            }
+        } catch (err) {
+            alert('An error occurred while registering. Please try again.');
+            console.error(err);
+        }
+    });
+</script>
+
+</body>
+</html>

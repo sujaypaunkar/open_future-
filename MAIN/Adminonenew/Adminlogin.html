@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="login.css">
+    <style>
+ body {
+        font-family: Arial, sans-serif;
+        background: url('banner.jpg') no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    /* Login Container */
+    .login-container {
+        background: rgba(255, 255, 255, 0.514);
+        width: 100%;
+        max-width: 400px;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+    }
+
+    /* Heading */
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    /* Form Inputs */
+    input {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ccccccbe;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 16px;
+        color: #333;
+    }
+
+    /* Focus Effect */
+    input:focus {
+        border-color: #3498db;
+        outline: none;
+    }
+
+    /* Submit Button */
+    button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 20px;
+        background-color: #3498db;
+        border: none;
+        color: white;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    /* Button Hover Effect */
+    button:hover {
+        background-color: #2980b9;
+    }
+
+    /* Error Message */
+    #error-message {
+        margin-top: 15px;
+        font-size: 14px;
+        color: red;
+    }
+
+    /* Registration Text */
+    .registration-text {
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    .registration-text a {
+        color: #3498db;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .registration-text a:hover {
+        color: #2980b9;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 480px) {
+        .login-container {
+            padding: 30px;
+            width: 80%;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        input, button {
+            font-size: 14px;
+        }
+    }
+</style>
+
+
+</head>
+<body>
+    <div class="login-container ">
+        <h2>Admin Login</h2>
+        <form id="login-form">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+    
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+    
+            <button type="submit">Login</button>
+            <p id="error-message" style="display: none; color: red;">Invalid credentials. Please try again.</p>
+        </form>
+        <div class="registration-text">
+            <p>Not registered yet? <a href="AdminReg.html">Register here</a></p>
+        </div>
+    </div>
+    
+    <script>
+      document.getElementById("login-form").addEventListener("submit", async function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    try {
+        const response = await fetch("http://localhost:8800/admin/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`
+        });
+
+        const result = await response.json();
+
+                if (response.ok && result.responseMessage === "success") {
+                    alert("Login successful!");
+                    console.log("Admin ID:", result.adminId); // Log admin ID for debugging or further use
+                    window.location.href = "Admin.html"; // Redirect to admin dashboard
+                } else {
+                    displayErrorMessage(result.responseMessage || "Invalid credentials.");
+                }
+            } catch (error) {
+                console.error("Error during login:", error);
+                displayErrorMessage("A network error occurred. Please try again later.");
+            }
+        });
+
+        function displayErrorMessage(message) {
+            const errorElement = document.getElementById("error-message");
+            errorElement.textContent = message;
+            errorElement.style.display = "block";
+        }
+    </script>
+    
+</body>
+</html>

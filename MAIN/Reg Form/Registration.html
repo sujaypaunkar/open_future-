@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Registration Form</title>
+<link rel="stylesheet" href="reg.css">
+<link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+<script>
+        function validatePasswords() {
+            const password = document.querySelector("input[placeholder='Enter your password']").value;
+            const confirmPassword = document.querySelector("input[placeholder='Confirm your password']").value;
+            const passwordError = document.getElementById("passwordError");
+ 
+            if (password !== confirmPassword) {
+                passwordError.textContent = "Passwords do not match.";
+                return false;
+            }
+            passwordError.textContent = "";
+            return true;
+        }
+ 
+        function validateName() {
+            const nameInput = document.getElementById("fullName").value;
+            const nameError = document.getElementById("nameError");
+ 
+            if (/\d/.test(nameInput)) {
+                nameError.textContent = "Name should not contain numbers.";
+                return false;
+            }
+            nameError.textContent = "";
+            return true;
+        }
+ 
+        function validateEmail() {
+            const emailInput = document.getElementById("email").value;
+            const emailError = document.getElementById("emailError");
+ 
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(emailInput)) {
+                emailError.textContent = "Invalid email address.";
+                return false;
+            }
+            emailError.textContent = "";
+            return true;
+        }
+ 
+        async function submitForm(event) {
+            event.preventDefault();
+ 
+            if (!validateName() || !validateEmail() || !validatePasswords()) {
+                alert("Please fix validation errors.");
+                return;
+            }
+ 
+            const fullName = document.getElementById("fullName").value;
+            const username = document.querySelector("input[placeholder='Enter your username']").value;
+            const phoneNumber = document.querySelector("input[type='tel']").value;
+            const email = document.getElementById("email").value;
+            const password = document.querySelector("input[placeholder='Enter your password']").value;
+            const gender = document.querySelector("input[name='gender']:checked")?.value;
+ 
+            if (!gender) {
+                alert("Please select your gender.");
+                return;
+            }
+ 
+            const requestBody = { fullName, username, phoneNumber, email, password, gender };
+ 
+            try {
+                const response = await fetch("http://localhost:8800/user/register", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(requestBody),
+                });
+ 
+                if (response.ok) {
+                    alert("Registration successful!");
+                    window.location.href = "file:///C:/Users/91832/Desktop/MAIN(final)/MAIN/Reg%20Form/reg%20success.html";
+                } else {
+                    const error = await response.json();
+                    alert(`Error: ${error.message || "Something went wrong!"}`);
+                }
+            } catch (err) {
+                console.error("Submission error:", err);
+                alert("Unable to submit. Try again later.");
+            }
+        }
+</script>
+</head>
+<body>
+<div class="wrapper">
+    
+<form id="registrationForm" onsubmit="submitForm(event)">
+<h2>Registration</h2>
+
+<div class="user-details">
+<div class="input-box">
+<span id="nameError" style="color: red;"></span>
+<span class="details">Full Name *</span>
+<input type="text" id="fullName" placeholder="Enter your name" oninput="validateName()" required>
+</div>
+<div class="input-box">
+<span class="details">Username *</span>
+<input type="text" placeholder="Enter your username" required>
+</div>
+<div class="input-box">
+<span class="details">Phone Number *</span>
+<input type="tel" placeholder="Enter your phone number" pattern="[0-9]{10}" maxlength="10" required>
+</div>
+<div class="input-box">
+<span id="emailError" style="color: red;"></span>
+<span class="details">Email *</span>
+<input type="email" id="email" placeholder="Enter your email" oninput="validateEmail()" required>
+</div>
+<div class="input-box">
+<span class="details">Password *</span>
+<input type="password" placeholder="Enter your password" required>
+</div>
+<div class="input-box">
+<span id="passwordError" style="color: red;"></span>
+<span class="details">Confirm Password *</span>
+<input type="password" placeholder="Confirm your password" oninput="validatePasswords()" required>
+</div>
+</div>
+<div class="gender-details">
+<span class="gender-title">Gender *</span>
+<label><input type="radio" name="gender" value="m"> Male</label>
+<label><input type="radio" name="gender" value="f"> Female</label>
+<label><input type="radio" name="gender" value="o"> Others</label>
+</div>
+<div class="button">
+<input type="submit" value="Register">
+</div>
+</form>
+</div>
+</body>
+</html>

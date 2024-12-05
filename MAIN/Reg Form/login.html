@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+
+        <h2>User Login</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="login-button">Login</button>
+        </form>
+        <p>Don't have an account? <a href="Registration.html">Register here</a></p>
+    </div>
+</body>
+</html>
+
+
+    <script>
+       document.getElementById("loginForm").addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    // Get form data
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    // Validate inputs
+    if (!username || !password) {
+        alert("Please fill in both username and password.");
+        return;
+    }
+
+    try {
+        // Send login request to the backend
+        const response = await fetch("http://localhost:8800/user/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`
+        });
+
+        if (response.ok) {
+            const result = await response.text();
+            alert(result); // Success message from backend
+            // Redirect to dashboard or another page on success
+            window.location.href = "file:///C:/Users/91832/Desktop/MAIN(final)/MAIN/index.html";
+        } else {
+            alert("Login failed. Please check your username and password.");
+        }
+    } catch (error) {
+        console.error("Error logging in:", error);
+        alert("An error occurred. Please try again later.");
+    }
+});
+
+    </script>
+</body>
+</html>

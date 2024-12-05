@@ -1,0 +1,1087 @@
+<style>
+  /* Contact page */
+  /* Title Container */
+  /* Navigation Bar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.692); /* Semi-transparent background */
+  backdrop-filter: blur(10px);
+  padding: 10px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+ 
+.logo img {
+  max-width: 120px;
+  height: auto;
+}
+ 
+/* Main Navigation Links */
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+ 
+nav ul li {
+  position: relative;
+}
+ 
+nav ul a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 15px;
+  transition: color 0.3s, background-color 0.3s;
+}
+ 
+nav ul a:hover {
+  color: #f0efec;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+ 
+/* Dropdown Menus */
+nav ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(187, 180, 180, 0.9); /* Dark dropdown background */
+  padding: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(172, 169, 169, 0.3);
+  z-index: 999;
+}
+ 
+nav ul li:hover ul {
+  display: block;
+}
+ 
+nav ul li ul li {
+  white-space: nowrap;
+}
+ 
+nav ul li ul a {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+ 
+nav ul li ul a img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+ 
+nav ul li ul a:hover {
+  background-color: rgba(236, 234, 230, 0.7);
+}
+ 
+
+
+.title-container {
+    text-align: center;
+    background-image: url('pexels-pixabay-260931.jpg'); /* Add your image URL here */
+    background-size: cover;
+    background-position: center;
+    padding: 119px 20px; /* Add padding to provide space around the heading */
+    color: white;
+}
+
+.contact-page {
+    max-width: 100%;
+    margin: 0;
+    padding: 20px;
+}
+
+
+/* Styling for contact icons */
+.contact-info .icon {
+    width: 34px;
+    height: 34px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Header Styling */
+.main-heading h1 {
+    font-size: 70px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    text-align: center;
+}
+
+/* Contact Info Section */
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(7, 7, 7, 0.363);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.info-item {
+    flex: 1;
+    padding: 10px;
+}
+
+.icon {
+    font-size: 24px;
+    color: #00bcd4;
+}
+
+/* Contact Container Layout */
+.contact-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.contact-form {
+    flex: 1;
+    background-color: rgb(228, 228, 228);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 50%; 
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.form-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* Styling for inputs and textarea */
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: none;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Focus Effect on Input */
+input:focus,
+textarea:focus {
+    border-bottom: 1px solid #007fd4;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Button Styling */
+button {
+    display: inline-block;
+    background-color: #007fd4;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0097a7;
+}
+
+/* Image Styling */
+.contact-image {
+    flex: 1;
+    max-width: 45%;
+}
+
+.contact-image img {
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover; /* Keeps image proportions intact */
+    height: 385px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-form {
+        max-width: 100%;
+    }
+
+    .contact-image {
+        max-width: 100%;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+</style>
+<!DOCTYPE html>
+<html lang="en">
+  
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Page</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+//  html code start here
+
+
+        <header class="transparent-header">
+        <nav>
+          <div class="logo">
+            <img src="./brand.png" alt="Company Logo">  
+          </div>
+          <div class="navbar">
+            <a href="#home">HOME</a>
+            <div class="dropdown">
+              <button class="dropbtn">ABOUT US
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                
+                <div class="row">
+                  <div class="column">
+                    <a href="javascript:void(0)" onclick="leadershipTeam()"><img src="./Services icon/1/ourleadershipteam.svg" class="service-icon" alt="">Our leadership Team</a>        
+                    <a href="javascript:void(0)" onclick="openVentureCapital()"><img src="./Services icon/1/Our Venture Capital Portfolio.svg" class="service-icon" alt="">Our Venture Capital Portfolio</a>            
+                    <a href="javascript:void(0)" onclick="valueProposition()"><img src="./Services icon/1/Value Proposition.svg" class="service-icon" alt="">valueProposition</a>
+                    <a href="#"><img src="./Services icon/1/Our Clientele.svg" class="service-icon" alt="">Our Clientele</a>
+                  </div>
+                  <div class="column">
+                    <a href="javascript:void(0)" onclick="ourGroupCompanies()"><img src="./Services icon/1/Our Group Companies.svg" class="service-icon" alt="">Our Group Companies</a>              
+                    <a href="javascript:void(0)" onclick="codeOfConduct()"><img src="./Services icon/1/Code of Conduct.svg" class="service-icon" alt="">Code of Conduct</a>
+        
+                    <a href="javascript:void(0)" onclick="safeShoreMethodology()"><img src="./Services icon/1/Safe shore Methodology.svg" class="service-icon" alt="">Safe share Methodology</a>
+                    <a href="#"><img src="./Services icon/1/Our Partners.svg" class="service-icon" alt="">Our Partners</a>
+                  </div>
+                  <div class="column">
+                    <a href="javascript:void(0)" onclick="Mission()"><img src="./Services icon/1/ams.png" class="service-icon" alt="">Our Mission </a>             
+                    <a href="javascript:void(0)" onclick="csr()"><img src="./Services icon/1/Corporate Social Responsibility.svg" class="service-icon" alt="">Corporate Social Responsibility</a>
+                    <a href="javascript:void(0)" onclick="openRIGFramework()"><img src="./Services icon/1/RIG Framework.svg" class="service-icon" alt="">RIG Framework</a>
+                  </div>
+                  <div class="column">
+                    <a href="javascript:void(0)" onclick="ourvision()"><img src="./Services icon/1/ams.png"  class="service-logo">Our Vision</a>
+                    <a href="javascript:void(0)" onclick="Values()"><img src="./Services icon/1/Value Proposition.svg" class="service-icon" alt="">Our Values</a>
+                    <a href="javascript:void(0)" onclick="awardsRecognition()"><img src="./Services icon/1/Awards.svg" class="service-icon" alt="">Award Recognition</a>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+        
+            
+        
+            <div class="dropdown">
+              <button class="dropbtn">SERVICES
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                
+                <div class="row">
+                  <div class="column">
+                    <a href="javascript:void(0)" onclick="ams()"><img src="./Services icon/1/ams.png" class="service-icon" alt="">AMS</a>
+                    <a href="javascript:void(0)" onclick="salesforce()"><img src="./Services icon/1/salesforce.svg" class="service-icon" alt="">Salesforce</a>
+                    <a href="javascript:void(0)" onclick="mobility()"><img src="./Services icon/1/mobility.svg" class="service-icon" alt="">Mobility</a>
+                    <a href="javascript:void(0)" onclick="geospatial()"><img src="./Services icon/1/Geospatial Servicess.svg" class="service-icon" alt="">Geospatial Services</a>
+                    <a href="javascript:void(0)" onclick="bpo()"><img src="./Services icon/1/business-processing-outsourcing.svg" class="service-icon" alt="">Business Process Outsourcing</a>
+                  </div>
+                  <div class="column">
+                    <a href="javascript:void(0)" onclick="erpCrm()"><img src="./Services icon/1/erp-crm.svg" class="service-icon" alt="">ERP & CRM</a>
+                    <a href="javascript:void(0)" onclick="murex()"><img src="./Services icon/1/murex.svg" class="service-icon" alt="">Murex</a>
+                    <a href="javascript:void(0)" onclick="emergingTech()"><img src="./Services icon/1/Emerging Techh.svg" class="service-icon" alt="">Emerging Tech & Project</a>
+                    <a href="javascript:void(0)" onclick="communication()"><img src="./Services icon/1/communication-service.svg" class="service-icon" alt="">Communication Services</a>
+                    <a href="javascript:void(0)" onclick="testing()"><img src="./Services icon/1/testing-service.svg" class="service-icon" alt="">Testing Services</a>
+        
+                  </div>
+                  <div class="column">
+                    <a href="javascript:void(0)" onclick="sap()"><img src="./Services icon/1/sap.svg" class="service-icon" alt="">SAP </a>
+                    <a href="javascript:void(0)" onclick="cloudServices()"><img src="./Services icon/1/cloud-service.svg" class="service-icon" alt="">Cloud Services</a>
+                    <a href="javascript:void(0)" onclick="dataAnalytics()"><img src="./Services icon/1/Data Analyticss.svg" class="service-icon" alt="">Data Analystics</a>
+                    <a href="javascript:void(0)" onclick="siteReliability()"><img src="./Services icon/1/site-reability-engineering-devops.svg" class="service-icon" alt="">Site Reliability Engineering & DevOps</a>
+                    <a href="javascript:void(0)" onclick="training()"><img src="./Services icon/1/training-service.svg" class="service-icon" alt="">Training Services</a>
+                  </div>
+                  <div class="column">
+                    <a href="javascript:void(0)" onclick="oracle()"><img src="./Services icon/1/oracle.svg" class="service-icon" alt="">Oracle</a>
+                    <a href="javascript:void(0)" onclick="managedServices()"><img src="./Services icon/1/professional.png" class="service-icon" alt="">Professional & Managed Services</a>
+                    <a href="javascript:void(0)" onclick="infrastructure()"><img src="./Services icon/1/Infrastructure Management Services.svg" class="service-icon" alt="">Infrastructure Management Seervices</a>
+                    <a href="javascript:void(0)" onclick="consulting()"><img src="./Services icon/1/consulting-service.svg" class="service-icon" alt="">Consulting Services</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+        
+            <a href="javascript:void(0)" onclick="showBlogs()">BLOGS</a>
+        
+            <a href="./careers/careers.html">CAREERS</a>
+        
+        
+        
+        
+        
+        
+            <div class="dropdown">
+              <button class="dropbtn">INDUSTRIES
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                
+                <div class="row">
+                  <div class="column">
+                    <a href="javascript:void(0)" onclick="BFSI()"><img src="./Services icon/1/BFSIi.svg" class="service-icon" alt="">BFSI</a>
+                    <a href="javascript:void(0)" onclick="Manufacturing()"><img src="./Services icon/1/manufacturingg.svg" class="service-icon" alt="">Manufacturing</a>
+                    <a href="javascript:void(0)" onclick="Telecom()"><img src="./Services icon/1/telcomm.svg" class="service-icon" alt="">Telecom</a>
+                    <a href="javascript:void(0)" onclick="ComputingSoftware()"><img src="./Services icon/1/computing softwaree.svg" class="service-icon" alt="">Computing Software</a>
+                    <a href="javascript:void(0)" onclick="Automotive()"><img src="./Services icon/1/automotivee.svg" class="service-icon" alt="">Automotive</a>
+                  </div>
+                  <div class="column">
+                    <a href="javascript:void(0)" onclick="ConsumerElectronics()"><img src="./Services icon/1/consumer electronicss.svg" class="service-icon" alt="">Consumer Electronics</a>
+                    <a href="javascript:void(0)" onclick="Energy()"><img src="./Services icon/1/Energyy.svg" class="service-icon" alt="">Energy</a>
+                    <a href="javascript:void(0)" onclick="Healthcare()"><img src="./Services icon/1/Healthcaree.svg" class="service-icon" alt="">Healthcare</a>
+                    <a href="javascript:void(0)" onclick="MediaEntertainmentServices()"><img src="./Services icon/1/Mediaa.svg" class="service-icon" alt="">Media & Entertainment Services</a>
+                    <a href="javascript:void(0)" onclick="Retail()"><img src="./Services icon/1/Retaill.svg" class="service-icon" alt="">Retail</a>
+        
+                  </div>
+                  <div class="column">
+                    <a href="javascript:void(0)" onclick="TravelTourism()"><img src="./Services icon/1/professional.png" class="service-icon" alt="">Travel & Tourism </a>
+                    <a href="javascript:void(0)" onclick="Logistics()"><img src="./Services icon/1/infrastructure-management-service.svg" class="service-icon" alt="">Logistics</a>
+                    <a href="javascript:void(0)" onclick="Education()"><img src="./Services icon/1/Testing Servicess.svg" class="service-icon" alt="">Education</a>
+                    <a href="javascript:void(0)" onclick="Ecommerce()"><img src="./Services icon/1/communication-service.svg" class="service-icon" alt="">E-commerce</a>
+                    <a href="javascript:void(0)" onclick="Agriculture()"><img src="./Services icon/1/emerging-tech-project.svg" class="service-icon" alt="">Agriculture</a>
+                  </div>
+                  <div class="column">
+                    <a href="javascript:void(0)" onclick="Fintech()"><img src="./Services icon/1/training-service.svg" class="service-icon" alt="">Fintech</a>
+                    <a href="javascript:void(0)" onclick="GovernmentPublicSector()"><img src="./Services icon/1/Our Group Companies.svg" class="service-icon" alt="">Government & Public Sector</a>
+                    <a href="javascript:void(0)" onclick="Insurance()"><img src="./Services icon/1/ams.png" class="service-icon" alt="">Insurance</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+        
+        
+            <a href="./feedback/feedback.html" data-after="Feedback">FEEDBACK</a>
+        
+            
+          </div>    
+        </header>
+        
+        // html code end here 
+        
+        // css code start here
+        
+        
+        
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Footer Section</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+         
+        
+        /* Navbar container */
+        .navbar {
+          overflow: hidden;
+          background-color: #070d1f00; /*block color home, services that box*/
+          font-family: Arial;
+          margin: 10px;
+          margin-right: 133px;      /*header home,.. right side margin*/
+          }
+          
+        .logo img {
+            width: 400px; /* Adjust logo size */
+        }
+        
+        .logo img{
+        max-width: 300px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 5%;
+            padding-right: 5%;
+            height: 80%; /*header height*/
+            
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: relative; /* Position relative for dropdown */
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+            font-size: 20px;
+        }
+        
+        nav ul li a:hover {
+            color: rgba(13, 13, 13, 0.767); /* Change text color on hover */
+        }
+        
+        
+        nav ul li a {
+            color: #fff;
+            padding: 10px 15px; /* Adjust padding for better clickable area */
+            position: relative; /* Position relative for pseudo-element */
+            text-decoration: none; /* Remove underline */
+            transition: color 0.3s; /* Smooth color transition */
+            font-weight: 400; /* Set normal weight */
+        }
+        
+        .transparent-header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: #070d1fcc; /* Semi-transparent background */
+            backdrop-filter: blur(10px); /* Optional blur effect */
+            padding: 6px;
+            z-index: 1000;
+            height: 11% ;   /*height of header blur help to fix*/
+        }
+        
+          /* Links inside the navbar */
+          .navbar a {
+          float: left;
+          font-size: 16px; /*header font*/
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          }
+          /* Style for the icons next to service names */
+        
+          .service-icon {
+          width: 38px; /* Adjust size */
+          height: 38px;
+          margin-right: 8px; /* Space between the icon and text */
+          vertical-align: middle; /* Align icon with text */
+          }
+          
+          /* The dropdown container */
+          .dropdown {
+          float: left;
+          overflow: hidden;  /*header tab*/
+          font-size: 16px;  /*header*/
+          }
+          
+          /* Dropdown button */
+          .dropdown .dropbtn {
+          font-size: 16px;
+          border: none;
+          outline: none;
+          color: white;
+          padding: 14px 16px;
+          background-color: inherit;
+          font: inherit; /* Important for vertical align on mobile phones */
+          margin: 0; /* Important for vertical align on mobile phones */
+          }
+          
+          /* Add a red background color to navbar links on hover */
+          .navbar a:hover, .dropdown:hover .dropbtn {
+          background-color: #4e64a4;   /*select hover color dropdown*/
+          border-radius: 13px; /* Rounds the corners on hover */
+        
+          
+        }
+          
+          /* Dropdown content (hidden by default) */
+          .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          width: 100%;
+          left: 0;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+          width: calc(100% - -70px); /* Adjust width drop down menu  while keeping margins */ 
+          left: 20px; /* Margin on the left */
+          right: 20px; /* Margin on the right */
+          background-color: rgba(127, 135, 158, 0.6); /* Semi-transparent dark background */
+            backdrop-filter: blur(8px); /* Blur effect */
+          }
+        
+          
+          
+          /* Mega Menu header, if needed */
+          .dropdown-content .header {
+          background: rgb(128, 187, 199);
+          padding: 16px;
+          color: white;
+          }
+          
+          /* Show the dropdown menu on hover */
+          .dropdown:hover .dropdown-content {
+          display: block;
+          }
+          
+          /* Create three equal columns that floats next to each other */
+         
+          .column {	
+          float: left;
+          width:24.5%;  
+          padding: 10px;
+          background-color: #070d1fcc;  /*menu colom back color*/
+          height: 350px;
+        
+          }
+        
+        
+        .dropdown-content .row .column:last-child {
+          border-right: none; /* Remove the border from the last column */
+        }
+          
+          /* Style links inside the columns */
+          .column a {
+            font-size: 19px; /* Adjust the size drop down coloum */
+        
+          float: none;
+          color: white; /*text color inside menu drop down*/
+          padding: 16px;   /*gap between rows inside coloum*/
+          text-decoration: none;
+          display: block;
+          text-align: left;
+          
+          
+          }
+          
+          /* Add a background color on hover */
+          .column a:hover {
+          background-color: #4e64a4; /*inside menu drop down select highligh color*/
+          
+        }
+          
+          /* Clear floats after the columns */
+          .row:after {
+          content: "";
+          display: table;
+          clear: both;
+          }
+        
+        /*header code end here */
+        
+        
+        
+        </style>
+        </head>
+        <body>
+        </div>
+        
+        // css code end  here
+       
+    <header class="main-heading">
+      <div class="title-container">
+        <h1>Contact Us</h1>
+      </div>
+    </header>
+  
+    <section class="contact-page">
+      <!-- Rest of your content -->
+    </section>
+  </body>
+  
+  </header>
+
+  <section class="contact-page">
+    <div class="contact-info">
+      <div class="info-item">
+        <img src="strategy_icon_local.webp" alt="Location Icon" class="icon">
+        <p><strong>Address:</strong> Above Nagpur chamber of commerce, Nagpur, Maharashtra 440018</p>
+      </div>
+      <div class="info-item">
+        <img src="phone-call-icon-design-in-blue-circle-png.webp" alt="Phone Icon" class="icon">
+        <p><strong>Phone:</strong> +91-7219389550</p>
+      </div>
+      <div class="info-item">
+        <img src="th.jpg" alt="Email Icon" class="icon">
+        <p><strong>Email:</strong> info@openfuturetech.com</p>
+      </div>
+      <div class="info-item">
+        <img src="R.png" alt="Website Icon" class="icon">
+        <p><strong>Website:</strong> OpenFuture.com</p>
+      </div>
+    </div>
+    <div class="contact-container">
+          <div class="contact-form">
+            <h2>Get In Touch</h2>
+            <form>
+              <div class="form-group">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+              </div>
+              <input type="text" name="subject" placeholder="Subject" required>
+              <textarea name="message" placeholder="Message" required></textarea>
+              <button type="submit">Send Message</button>
+            </form>
+          </div>
+      <div class="contact-image">
+        <img src="office-desktop-with-laptop-business-man.jpg" alt="Lion roaring">
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
+<script>
+  // Select the form element
+const contactForm = document.querySelector('.contact-form form');
+
+// Listen for form submission
+contactForm.addEventListener('submit', async (event) => {
+  event.preventDefault(); // Prevent the default form submission
+  
+  // Get form data
+  const formData = new FormData(contactForm);
+  const data = {
+    name: formData.get('name'),
+    email: formData.get('email'),
+    subject: formData.get('subject'),
+    message: formData.get('message')
+  };
+
+  try {
+    // Send data to the backend using Fetch API
+    const response = await fetch('http://localhost:8800/save/saveContactInfo', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (response.ok) {
+      // Display success message
+      alert('Your message has been sent successfully!');
+      contactForm.reset(); // Reset the form
+    } else {
+      // Handle errors
+      alert('Failed to send your message. Please try again later.');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('An error occurred while sending your message.');
+  }
+});
+
+</script>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Footer Section</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+	#footer .footer {
+	min-height: 100px;
+	flex-direction: column;
+	padding: 10px 20px;
+}
+
+#footer h2 {
+	color: #f1c40f; /* Changed heading color to a vibrant yellow */
+	font-size: medium;
+	font-weight: 500;
+	font-size: 2.5rem; 
+	-webkit-text-fill-color: #f1f1f1;
+	letter-spacing: 0.1rem;
+	margin: 10px 0; 
+	text-align: center;
+}
+/* Styling for the contact info section */
+.contact-info {
+    text-align: right; /* Centers the content */
+    flex: 1; /* Ensures the container takes up available space */
+}
+
+.contact-info h1 {
+    margin-bottom: 20px; /* Adds spacing below the heading */
+}
+
+/* Styling for the contact icons */
+.contact-link {
+    margin: 0 15px; /* Adds space between the icons */
+}
+
+.contact-icon {
+    width: 50px; /* Set the width for the icon */
+    height: 50px; /* Set the height for the icon */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.contact-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+#footer .social-item {
+    display: inline-flex;
+    position: relative;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0); /* Fully transparent background */
+    padding: 5px; /* Optional padding */
+    border-radius: 50%; /* Keeps the background in a circular shape if you want it */
+}
+
+#footer .social-item img {
+    transition: 0.3s ease filter, 0.3s ease opacity;
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%;
+    opacity: 0.7; /* Makes images partially transparent */
+}
+
+#footer .social-item:hover img {
+    filter: grayscale(0);
+    opacity: 1; /* Removes transparency on hover */
+}
+
+
+#footer p {
+	color: #ecf0f1; /* Changed paragraph text color to a light grey */
+	font-size: 1.1rem; 
+	text-align: center; 
+	margin: 10px 0; 
+}
+
+/* General footer styling */
+:root {
+    --footer-bg-color: #0b3d91; /* Example dark blue background */
+    --footer-text-color: #ecf0f1;
+    --footer-heading-color: #f1c40f;
+    --footer-subheading-color: #bdc3c7;
+}
+.services-section ul li a {
+	color: white; /* Replace with your desired color, e.g., #333333 for dark gray */
+	text-decoration: none; /* This removes the underline from the links */
+  }
+  
+  .services-section ul li a:hover {
+	color: white; /* Optional: Change color on hover */
+  }
+  
+  .services-section ul li a:visited {
+	color: white; /* Optional: Change color for visited links */
+  }
+
+#footer {
+	color: var(--footer-text-color); /* Use variable or specific color */
+	padding: 40px;
+	font-family: 'Arial', sans-serif;
+	background-image: url(77.png); 
+	background-size: cover;
+	background-position: right;
+	background-repeat: no-repeat;
+}
+
+#footer .footer-logo img {
+	width: 100%; 
+	position: relative;
+	bottom: 50px;
+}
+
+#footer .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: right;
+}
+
+.footer h1 {
+	font-size: 32px; 
+	font-weight: bold;
+	text-align: left;
+	color: var(--footer-heading-color); /* Use variable */
+}
+
+.footer h2 {
+	font-size: 24px; 
+	text-align: left;
+	color: var(--footer-text-color);
+}
+
+ul li img {
+	width: 20px; /* Adjust as necessary */
+	height: auto;
+	margin-right: 5px;
+	vertical-align: middle;
+  }
+  
+
+ul li {
+	list-style: none;
+	font-size: 22px;
+	text-align: left;
+	padding: 8px 0; /* Adds a bit more padding */
+	color: var(--footer-text-color);
+}
+
+.main-content {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 40px;
+}
+
+.services-section,
+.solutions-section,
+.our-story-section ul li a {
+	color: white; /* Replace with your desired color, e.g., #333333 for dark gray */
+	text-decoration: none; /* This removes the underline from the links */
+  }
+  
+  .our-story-section ul li a:hover {
+	color: white; /* Optional: Change color on hover */
+  }
+  
+  .our-story-section ul li a:visited {
+	color: white; /* Optional: Change color for visited links */
+  }
+
+  .solutions-section ul li a {
+	color: white; /* Replace with your desired color, e.g., #333333 for dark gray */
+	text-decoration: none; /* This removes the underline from the links */
+  }
+  
+  .solutions-section ul li a:hover {
+	color: white; /* Optional: Change color on hover */
+  }
+  
+  .solutions-section ul li a:visited {
+	color: white; /* Optional: Change color for visited links */
+  }
+  
+
+  #footer .social-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    opacity: 1; /* Set to 1 to ensure icons are visible */
+    filter: grayscale(0) !important; /* Ensure icons are not grayscale */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smoother transition */
+}
+
+#footer .social-item:hover img {
+    opacity: 1; /* Ensure full opacity on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+#footer .social-item {
+    display: inline-flex;
+    position: relative;
+    margin: 0 10px; /* Increase space for better visibility */
+    padding: 10px; /* Padding for better spacing */
+    background-color: rgba(255, 255, 255, 0); /* Transparent background */
+    border-radius: 50%;
+    z-index: 1; /* Ensure it's on top of other elements */
+}
+
+/* Optional: Add background color to the icon container to make it stand out more */
+#footer .social-item:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Light background on hover */
+}
+
+
+
+.footer-menu ul li {
+	list-style: none;
+	font-size: 22px;
+	color: var(--footer-text-color);
+}
+
+#footer p {
+	width: 150%; /* Full width of the footer */
+	height: 1px; /* Line thickness */
+	background-color: #cdc9c980; /* Line color */
+	margin-bottom: 15px; /* Space between line and text */
+  }
+  
+  #footer p {
+	text-align: center;
+	margin-top: 80px; /* Controls the space above the text */
+	font-size: 18px;
+	color: var(--footer-subheading-color);
+  }
+  
+  
+  
+.social-item a:hover img {
+	filter: brightness(0.8);
+}
+
+
+/* Responsive design adjustments for smaller screens */
+@media (max-width: 768px) {
+	.main-content {
+		flex-direction: column;
+		text-align: left;
+	}
+
+	.services-section,
+	.solutions-section,
+	.our-story-section {
+		padding: 10px;
+	}
+	.ABCD{
+	font-weight: 400 !important; /* Changed to normal weight */
+    text-transform: capitalize !important;
+    color: rgb(236, 224, 9) !important;
+	}
+}
+
+</style><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer Section</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<section id="footer">
+		<div class="ABCD">
+		<div class="footer container" style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
+	   
+	   
+		<!-- Main content section with flexbox layout -->
+		<div class="main-content" style="display: flex; justify-content: space-between; margin-top: 40px;">
+	   
+		  <!-- Services section (left) -->
+		  <div class="services-section" style="flex: 1; text-align: left; padding-right: 20px;">
+			<div class="footer-logo">
+			  <div id="contentArea"></div>
+			  <img src="./brand.png" alt="">
+			</div>
+			<ul>
+			  <ul>
+				<li><a href="javascript:void(0)" onclick="ourStory()">Our Story</a></li>
+				<li><a href="javascript:void(0)" onclick="ourGlobalPresence()">Our Global Presence</a></li>
+				<li><a href="javascript:void(0)" onclick="ourPortfolioCompanies()">Our Portfolio Companies</a></li>
+				<li><a href="javascript:void(0)" onclick="ourPartners()">Our Partners</a></li>
+				<li><a href="./careers/careers.html">CAREERS</a></li>
+				<li><a href="javascript:void(0)" onclick="awardsRecognition()">Awards & Recognition</a></li>
+			</ul>
+			<script src="app.js"></script>
+		   
+	   
+		  </div>
+	   
+		  <!-- Solutions section (middle) -->
+		  <div class="solutions-section" style="flex: 1; text-align: center; padding: 0 20px;"> <!-- Changed text-align to center -->
+			<h1 style="font-size: 25px; font-weight: 700;">Solutions</h1>
+			<ul style="list-style: none; padding: 0;"> <!-- Added padding reset for list -->
+			  <li><a href="javascript:void(0)" onclick="deepTech()">Deep-Tech AI Solutions</a></li>
+			  <li><a href="javascript:void(0)" onclick="recruitment()">Recruitment Solution</a></li>
+			  <li><a href="javascript:void(0)" onclick="gis()">Geographic Information System</a></li>
+			  <li><a href="javascript:void(0)" onclick="businessManagement()">Business Management Solution</a></li>
+			  <li><a href="javascript:void(0)" onclick="aiMlBanking()">AI and ML Banking Solutions</a></li>
+			  <li><a href="javascript:void(0)" onclick="conversationalAI()">Conversational AI</a></li>
+			  <li><a href="javascript:void(0)" onclick="cloudTelephony()">Cloud Telephony</a></li>
+			  <li><a href="javascript:void(0)" onclick="unifiedSecrets()">Unified Secrets Management Platform</a></li>
+			  <li><a href="javascript:void(0)" onclick="noCodeEcommerce()">No-Code eCommerce Solution</a></li>
+			  <li><a href="javascript:void(0)" onclick="bankInApp()">A Bank in Any App</a></li>
+			  <li><a href="javascript:void(0)" onclick="noCodeWorkflow()">No-Code Workflow Automation and CRM</a></li>
+			</ul>
+		</div>
+	   
+		  <!-- Our Story section (right) -->
+		  <div class="our-story-section" style="flex: 1; text-align: left; padding-left: 0 20px;">
+			<h1 style="font-size: 25px; font-weight: 700;">Services</h1>
+			<ul>
+			  <li></li>
+			  <li><a href="javascript:void(0)" onclick="ams()">AMS</a></li>
+		  <li><a href="javascript:void(0)" onclick="erpCrm()">ERP & CRM</a></li>
+		  <li><a href="javascript:void(0)" onclick="sap()">SAP</a></li>
+		  <li><a href="javascript:void(0)" onclick="oracle()">Oracle</a></li>
+		  <li><a href="javascript:void(0)" onclick="salesforce()">Salesforce</a></li>
+		  <li><a href="javascript:void(0)" onclick="murex()">Murex</a></li>
+		  <li><a href="javascript:void(0)" onclick="cloudServices()">Cloud Services</a></li>
+		  <li><a href="javascript:void(0)" onclick="managedServices()">Professional & Managed Services</a></li>
+		  <li><a href="javascript:void(0)" onclick="mobility()">Mobility</a></li>
+		  <li><a href="javascript:void(0)" onclick="emergingTech()">Emerging Tech & Projects</a></li>
+		  <li><a href="javascript:void(0)" onclick="dataAnalytics()">Data Analytics</a></li>
+	   
+		  </div>
+		  <div class="our-story-section" style="flex: 1; text-align: left; padding-left: 0 20px;">
+			<ul>
+			  <li><a href="javascript:void(0)" onclick="infrastructure()">Infrastructure Management Services</a></li>
+			  <li><a href="javascript:void(0)" onclick="geospatial()">Geospatial Services</a></li>
+			  <li><a href="javascript:void(0)" onclick="communication()">Communication Services</a></li>
+			  <li><a href="javascript:void(0)" onclick="siteReliability()">Site Reliability Engineering & DevOps</a></li>
+			  <li><a href="javascript:void(0)" onclick="consulting()">Consulting Services</a></li>
+			  <li><a href="javascript:void(0)" onclick="bpo()">Business Process Outsourcing</a></li>
+			  <li><a href="javascript:void(0)" onclick="testing()">Testing Services</a></li>
+			  <li><a href="javascript:void(0)" onclick="training()">Training Services</a></li>
+			</ul>
+		  </div>
+	   
+	   
+		  <!-- Footer closing -->
+	   
+	   
+		<!-- Social icons -->
+		<div class="contact-info" style="flex: 1; text-align: center;">
+		  <h1>Contact Info</h1>
+		 
+	  <div class="social-icon"> <!-- Added a wrapper for social icons -->
+		  <div class="social-item">
+			  <a href="https://www.instagram.com/openfuture_technologies/"><img src="insta icon (1).png" alt="Instagram" /></a>
+		  </div>
+		  <div class="social-item">
+			<a href="mailto:info@openfuturetech.com"><img src="mail icon.png" alt ="Email" /></a>
+		  </div>
+		  <div class="social-item">
+			  <a href="tel:+91-7219389550"><img src="call icon png (2).png" alt="WhatsApp" /></a>
+		  </div>
+		  <div class="social-item">
+			<a href="https://www.linkedin.com/in/openfuture-technologies-private-limited-173724307/?originalSubdomain=in"><img src="link.jpg" alt="linkdin" /></a>
+		</div>
+	  </div>
+	  </div>
+	   
+	   
+		</div>
+		<!-- Footer copyright -->
+		<p>Copyright © 2024 OpenFuture. All rights reserved</p>
+	  </section>
+	  </body>
+	   
+	  </html>
+	   

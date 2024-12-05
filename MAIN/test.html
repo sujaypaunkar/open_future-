@@ -1,0 +1,501 @@
+
+            <style>
+                /* Global Styles */
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    color: black;
+                    text-align: center;
+                }
+ 
+                /* Header Section */
+                .title-container {
+                    position: relative;
+                    background-image: url('About.jpg');
+                    background-size: cover;
+                    background-position: center;
+                    height: 400px;
+                    color: black;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-bottom: 5px solid #fff;
+                }
+                    body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4; /* Light background for contrast */
+  color: #333;
+}
+ 
+
+ 
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+ 
+.menu-toggle span {
+  width: 30px;
+  height: 3px;
+  background: white;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+ 
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+}
+ 
+/* Additional Styling for Buttons or Highlights */
+.service-logo {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+ 
+a.nav-item {
+  font-weight: bold;
+}
+ 
+                .title-container h1 {
+                    font-size: 40px;
+                    margin: 0;
+                    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+                }
+ 
+                .subtitle {
+                    font-size: 22px;
+                    color: white;
+                    margin: 20px 0;
+                    font-weight: bold;
+                    background-color: rgba(128, 128, 128, 0.5);
+                    padding: 10px;
+                    border-radius: 5px;
+                }
+ 
+                /* Main Content Section */
+                .content {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 40px 20px;
+                    background-color: #f4f4f4;
+                }
+ 
+                .content .text {
+                    flex: 1;
+                    padding-right: 20px;
+                    text-align: left;
+                }
+ 
+                .content .text p {
+                    font-size: 26px;  /* Increased font size */
+                    line-height: 1.6;
+                }
+ 
+                .content .image {
+                    flex: 1;
+                    max-width: 50%;
+                }
+ 
+                .content .image img {
+                    width: 100%;
+                    border-radius: 8px;
+                }
+ 
+                /* Content Boxes Section */
+                .content-boxes {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 20px;
+                    padding: 20px;
+                    background-color: #fff;
+                }
+ 
+                .content-box {
+                    background-color: #f9f9f9;
+                    border: 1px solid #ddd;
+                    padding: 20px;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                }
+ 
+                .content-box h3 {
+                    margin-top: 0;
+                }
+ 
+                /* Footer Section */
+                footer {
+                    background-color: #333;
+                    color: white;
+                    padding: 20px 0;
+                    text-align: center;
+                    font-size: 14px;
+                    position: relative;
+                    bottom: 0;
+                    width: 100%;
+                }
+ 
+                /* Values Section */
+                #values {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    padding: 20px;
+                    animation: fadeIn 1s ease-out;
+                }
+ 
+                /* Individual Value Box */
+                .value {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 20px;
+                    padding: 20px;
+                    border-bottom: 1px solid #ddd;
+                    opacity: 0;
+                    transform: translateY(20px);
+                    animation: fadeInUp 1s ease-out forwards;
+                }
+ 
+                .value:nth-child(1) {
+                    animation-delay: 0.2s;
+                }
+ 
+                .value:nth-child(2) {
+                    animation-delay: 0.4s;
+                }
+ 
+                .value:nth-child(3) {
+                    animation-delay: 0.6s;
+                }
+ 
+                .value:nth-child(4) {
+                    animation-delay: 0.8s;
+                }
+ 
+                /* Text Styling */
+                .value .text {
+                    flex: 1;
+                }
+ 
+                .value h1 {
+                    font-size: 26px;  /* Increased font size */
+                    margin-bottom: 10px;
+                }
+ 
+                .value p {
+                    font-size: 26px;  /* Increased font size */
+                    line-height: 1.6;
+                }
+ 
+                /* Image Styling */
+                .value .image {
+                    flex: 0 0 40%;
+                }
+ 
+                .value .image img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 10px;
+                    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+                }
+ 
+                /* Animation for fading in */
+                @keyframes fadeIn {
+                    0% {
+                        opacity: 0;
+                    }
+                    100% {
+                        opacity: 1;
+                    }
+                }
+ 
+                /* Animation for sliding up and fading in */
+                @keyframes fadeInUp {
+                    0% {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    100% {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+ 
+                /* Back Button */
+                .back-arrow {
+                    position: fixed;
+                    top: 20px;
+                    left: 20px;
+                    font-size: 24px;
+                    cursor: pointer;
+                    color: #333;
+                }
+ 
+                .back-arrow:hover {
+                    text-decoration: underline;
+                }
+ 
+            </style>
+        </head>
+        <body>
+            <iframe src="Header.html" width="100%" height="100px" frameborder="0"></iframe>
+
+            <!-- Title Section -->
+            <div class="title-container">
+                <h1>Values</h1>
+            </div>
+ 
+            <!-- Main Content Section -->
+            <div class="content">
+                <!-- Left Text -->
+                <div class="text">
+                    <section id="values">
+                        <div class="value">
+                            <div class="text">
+                                <h1>Consistency</h1>
+                                <p>At OpenFuture Technologies Private Limited, consistency is the cornerstone of everything we do. We are committed to delivering high standards of quality, performance, and integrity in every aspect of our operations. Our unwavering dedication ensures that we consistently fulfill our promises and remain a dependable partner for all stakeholders, every step of the way. Consistency also allows us to establish long-term relationships with clients, as they know they can always rely on us to meet their needs.</p>
+                            </div>
+                            <div class="image">
+                                <img src="consistency.jpg" alt="Consistency Image">
+                            </div>
+                        </div>
+ 
+                        <div class="value">
+                            <div class="text">
+                                <h1>Reliability</h1>
+                                <p>Reliability is fundamental to building and sustaining trust. We recognize the importance of being a reliable partner in all our engagements. Our focus is on providing trustworthy solutions and services that our clients can depend on, ensuring seamless and dependable experiences throughout our collaborations. From delivering on-time projects to providing accurate and effective solutions, our reputation for reliability makes us a preferred choice for many businesses.</p>
+                            </div>
+                            <div class="image">
+                                <img src="reli.jpg" alt="Reliability Image">
+                            </div>
+                        </div>
+ 
+                        <div class="value">
+                            <div class="text">
+                                <h1>Transparency</h1>
+                                <p>Transparency is at the heart of our business philosophy. We believe in fostering open, honest, and clear communication with all our stakeholders. Our commitment to transparency extends to every facet of our business practices, policies, values, and decision-making, allowing us to build lasting relationships based on trust and integrity. By openly sharing information and being upfront about challenges, we create a collaborative environment where everyone can thrive and contribute to mutual success.</p>
+                            </div>
+                            <div class="image">
+                                <img src="Transparency.jpg" alt="Transparency Image">
+                            </div>
+                        </div>
+ 
+                        <div class="value">
+                            <div class="text">
+                                <h1>Expertise</h1>
+                                <p>Expertise defines who we are. At OpenFuture, we are committed to continuously developing and refining our skills and knowledge to remain at the cutting edge of the industry. Our deep expertise enables us to deliver innovative, exceptional solutions that drive impactful results for our clients and position them for long-term success. Through ongoing research, training, and hands-on experience, we continue to be leaders in technological advancement, ensuring that our clients benefit from the latest and most effective strategies in the market.</p>
+                            </div>
+                            <div class="image">
+                                <img src="elec2.jpg" alt="Expertise Image">
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+ 
+            <!-- Back button -->
+            <span class="back-arrow" onclick="goBack()">&#8592; Back</span>
+ 
+            <script>
+                function goBack() {
+                    window.history.back();
+                }
+                history.pushState({ page: "Our Values" }, "Our Values", "#values");
+                window.addEventListener("popstate", function (event) {
+                    if (event.state === null || event.state.page !== "Our Values") {
+                        location.reload();
+                    }
+                });
+            </script>
+        </body>
+        </html>
+ 
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Footer Section</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+    /* Global styles */
+      #footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 20px;
+            margin-top: auto;
+        }
+ 
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+ 
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-right: 20px;
+        }
+ 
+        .footer-column h1 {
+            font-size: 25px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+ 
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+ 
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+ 
+        .footer-column li a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease;
+        }
+ 
+        .footer-column li a:hover {
+            color: #f4f4f4;
+        }
+ 
+        .footer-logo img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+ 
+        .footer-bottom {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            font-size: 14px;
+        }
+ 
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .rig-framework {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+            }
+ 
+            .framework-content {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+ 
+            .framework-image {
+                width: 90%;
+            }
+ 
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+ 
+            .footer-column {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+</style>
+</head>
+<body>
+</div>
+ 
+  <!-- Footer Section -->
+<section id="footer">
+<div class="footer-container">
+<!-- Services Section (Left) -->
+<div class="footer-column">
+<div class="footer-logo">
+<img src="./brand.png" alt="Brand Logo">
+</div>
+<ul>
+<li><a href="#">Our Story</a></li>
+<li><a href="#">Our Global Presence</a></li>
+<li><a href="#">Our Portfolio Companies</a></li>
+<li><a href="#">Our Partners</a></li>
+<li><a href="#">Careers</a></li>
+<li><a href="#">Awards & Recognition</a></li>
+</ul>
+</div>
+ 
+      <!-- Solutions Section (Middle) -->
+<div class="footer-column">
+<h1>Solutions</h1>
+<ul>
+<li><a href="#">Deep-Tech AI Solutions</a></li>
+<li><a href="#">Recruitment Solution</a></li>
+<li><a href="#">Geographic Information System</a></li>
+<li><a href="#">Business Management Solution</a></li>
+<li><a href="#">AI and ML Banking Solutions</a></li>
+<li><a href="#">Conversational AI</a></li>
+<li><a href="#">Cloud Telephony</a></li>
+<li><a href="#">Unified Secrets Management Platform</a></li>
+<li><a href="#">No-Code eCommerce Solution</a></li>
+<li><a href="#">A Bank in Any App</a></li>
+<li><a href="#">No-Code Workflow Automation and CRM</a></li>
+</ul>
+</div>
+ 
+      <!-- Services Section (Right) -->
+<div class="footer-column">
+<h1>Services</h1>
+<ul>
+<li><a href="#">AMS</a></li>
+<li><a href="#">ERP & CRM</a></li>
+<li><a href="#">Oracle</a></li>
+<li><a href="#">Murex</a></li>
+<li><a href="#">Cloud Services</a></li>
+<li><a href="#">Professional & Managed Services</a></li>
+<li><a href="#">Mobility</a></li>
+<li><a href="#">Data Analytics</a></li>
+<li><a href="#">Geospatial Services</a></li>
+<li><a href="#">SAP</a></li>
+</ul>
+</div>
+ 
+      <!-- Additional Services Section (Left) -->
+<div class="footer-column">
+<h1>More Services</h1>
+<ul>
+<li><a href="#">ERP & CRM</a></li>
+<li><a href="#">Emerging Tech & Projects</a></li>
+<li><a href="#">Infrastructure Management Services</a></li>
+<li><a href="#">Professional & Managed Services</a></li>
+<li><a href="#">Communication Services</a></li>
+<li><a href="#">Site Reliability Engineering & DevOps</a></li>
+<li><a href="#">Consulting Services</a></li>
+<li><a href="#">Business Process Outsourcing</a></li>
+<li><a href="#">Testing Services</a></li>
+<li><a href="#">Training Services</a></li>
+</ul>
+</div>
+</div>
+ 
+    <!-- Footer Bottom -->
+<div class="footer-bottom">
+<p>&copy; 2024 Open Future Technologies. All rights reserved.</p>
+</div>
+</section>
+ 
+</body>
+</html>
+    `;
+   
+    document.open();
+    document.write(sectionContent);
+    document.close();
+}
+ 

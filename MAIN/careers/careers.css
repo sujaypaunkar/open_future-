@@ -1,0 +1,564 @@
+ 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+/* Job Filter Section Styling */
+.job-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f4f8;
+    margin-bottom: 20px;
+}
+ 
+.filter-container {
+    display: flex;
+    gap: 10px;
+}
+ 
+.filter-input {
+    padding: 10px 15px;
+    font-size: 1rem;
+ 
+    border-radius: 5px;
+    width: 250px;
+    box-sizing: border-box;
+}
+ 
+.filter-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #204080;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+ 
+.filter-button:hover {
+    background-color: #1a3a70;
+}
+/* Add this CSS to style the location input */
+.location-input {
+    background-image: url('C:/Users/91832/Downloads/pin.png'); /* Update the path if needed */
+    background-size: 22px 18px; /* Adjust size to fit the input */
+    background-repeat: no-repeat;
+    background-position: 10px center; /* Position the icon inside the input field */
+    padding-left: 35px; /* Add padding to make space for the icon */
+}
+/* Styling for the section title */
+ 
+ 
+/* Container for the line and plane */
+.job-section {
+    background-image: url('pexels-cottonbro-6804071.jpg'); /* Replace with the path to your background image */
+    background-size: cover; /* Ensures the image covers the whole section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    padding: 40px 0; /* Adds padding to give some space around the section */
+    color: #fff; /* Ensures the text is white for better contrast */
+}
+.job-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #06577d;
+}
+/* Container for job listings */
+ 
+.job-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+ 
+/* Job listing box styling */
+.job-listing {
+    flex: 1 1 calc(33.33% - 20px);
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px 20px; /* Increased left padding to move text to the right */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+    text-align:center; /* Ensures text alignment is still left-aligned */
+}
+ 
+/* Hover effect on the job listing */
+.job-listing:hover {
+    background-color: #e0f7fa; /* Change the background color on hover */
+    border-color: #000ac1; /* Optional: change the border color on hover */
+    transform: translateY(-5px); /* Optional: slight hover animation */
+}
+ 
+/* Selected job listing styling */
+.job-listing.selected {
+    background-color: #e0f7fa; /* Adjust to preferred color */
+    border-color:black; /* Optional: change border color */
+}
+ 
+ 
+/* Hover effect for job listings */
+.job-listing:hover {
+    transform: translateY(-5px);
+}
+ 
+/* Title and content spacing */
+.job-listing h3 {
+    margin-top: 0 0 10px;
+    font-size: 1.3rem;
+    color: black;
+   
+ 
+ 
+}
+ 
+.job-listing p {
+    margin: 8px 0;
+color:black;
+ font-weight: 700;
+   
+}
+ 
+/* Apply button styling */
+.apply-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    color: #fff;
+    background-color: #007bff;
+ 
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+ 
+.apply-btn:hover {
+    background-color: #0056b3;
+}
+ 
+/* Container styling */
+.section.job-section {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f8f8f8;
+}
+ 
+/* Flex container to hold job listings */
+.section.job-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+ 
+ 
+/* Job listing box styling */
+.job-listing {
+    flex: 1 1 calc(33.33% - 20px); /* Three boxes per row with space between */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fffdfda4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+ 
+/* Hover effect for job listings */
+.job-listing:hover {
+    transform: translateY(-5px);
+}
+ 
+/* Title and content spacing */
+.job-listing h3 {
+    margin-top: 0;
+    font-size: 1.4em;
+    color: #333;
+}
+ 
+.job-listing p {
+    margin: 8px 0;
+    color: #555;
+}
+/* Selected job listing styling */
+ 
+ 
+/* Apply button styling */
+.apply-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #afd3f9;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+ 
+.apply-btn:hover {
+    background-color: #014d9d;
+}
+ 
+ 
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+ 
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+ 
+header nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+ 
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+ 
+header nav ul li a.active {
+    background-color: #555;
+    border-radius: 4px;
+}
+.hero {
+    background-image: url('pexels-pixabay-221537.jpg'); /* Replace with the path to your image */
+    background-size: cover; /* This will make the image cover the entire section */
+    background-position: center; /* Centers the image */
+    color:black;
+    padding: 50px 0;
+    text-align: center;
+}
+ 
+.hero {
+    background-color:grey;
+    color: rgb(19, 4, 4);
+    padding: 50px 0;
+    text-align: center;
+}
+.hero .highlight {
+    color: rgb(233, 234, 236)
+}
+ 
+.hero h1 {
+    margin: 0;
+    font-size: 3em;
+}
+ 
+.hero p {
+    font-size: 1.2em;
+   
+}
+ 
+ 
+.job a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #0044cc;
+    border: 1px solid #0044cc;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+ 
+.job a:hover {
+    background-color: #0044cc;
+    color: white;
+}
+ 
+ 
+/* Call to Action section styling */
+.cta {
+    background-image: url('offer-1.jpg'); /* Replace with the path to your image */
+    background-size: cover; /* Ensures the image covers the section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    color: #fff; /* Ensures text is white for readability */
+    text-align: center; /* Centers the text */
+    padding: 50px 20px; /* Adds padding around the content */
+    position: relative; /* Allows for overlay content */
+}
+ 
+/* Adding overlay for better readability */
+.cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Black background with some transparency */
+    z-index: 1; /* Ensures overlay stays below the content */
+}
+ 
+/* Title styling */
+.cta h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2; /* Ensures title stays above overlay */
+}
+ 
+/* Subtitle styling */
+.cta p {
+    font-size: 1.2em;
+    position: relative;
+    z-index: 2; /* Ensures text stays above overlay */
+}
+ 
+/* Link styling */
+.cta a {
+    color: #00aaff; /* Highlight link color */
+    text-decoration: none;
+}
+ 
+.cta a:hover {
+    text-decoration: underline; /* Adds underline effect on hover */
+}
+ 
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}.job-listing {
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+ 
+.job-listing h3 {
+    font-size: 1.6rem;
+    color:black;
+}
+ 
+.apply-btn {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+ 
+.apply-btn:hover {
+    background-color: #2980b9;
+}
+/* Global styling for What We Offer section */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+ 
+/* Container styling for What We Offer */
+.container {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+ 
+/* Title styling */
+.container h2 {
+  font-size: 2em;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+ 
+/* Subtitle styling */
+.container p.subtitle {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 40px;
+}
+ 
+/* Flex container for the cards */
+ 
+ 
+.offerings {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px; /* Add padding for spacing */
+  }
+ 
+  /* Individual card styling */
+  .offering {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center; /* Align content to center */
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover transition */
+  }
+ 
+  /* Hover effect for cards */
+  .offering:hover {
+    transform: translateY(-5px); /* Lift the card slightly */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add a more pronounced shadow */
+  }
+ 
+  /* Image styling */
+  .offering img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+ 
+  /* Number styling */
+  .offering-number {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+    position: relative;
+  }
+ 
+  /* Line next to the number */
+  .offering-number:after {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 2px;
+    background-color: #8b00ff;
+    position: absolute;
+    left: 35px;
+    top: 15px;
+  }
+ 
+  /* Title styling */
+  .offering-title {
+    font-size: 1.2em;
+    color: #333;
+    font-weight: 700;
+    margin: 5px 0;
+  }
+ 
+  /* Description styling */
+  .offering-desc {
+    font-size: 0.9em;
+    color: #777;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+  /* Base styles (already defined) */
+ 
+/* Base styles */
+ 
+/* Responsive styles */
+@media (max-width: 768px) {
+    /* Job section adjustments */
+   .job-container {
+        flex-direction: column; /* Stack jobs vertically */
+        gap: 15px; /* Add spacing between job listings */
+    }
+ 
+ 
+    /* Job filter section adjustments */
+    .filter-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+ 
+    .filter-input {
+        width: 100%; /* Full width for inputs */
+    }
+ 
+    /* Hero section adjustments */
+    .hero h1 {
+        font-size: 2em; /* Reduce font size */
+    }
+ 
+    .hero p {
+        font-size: 1em; /* Adjust paragraph font size */
+    }
+ 
+    /* CTA section adjustments */
+    .cta {
+        padding: 30px 15px; /* Adjust padding for smaller screens */
+    }
+ 
+    .cta h2 {
+        font-size: 1.8em; /* Adjust title font size */
+    }
+ 
+    .cta p {
+        font-size: 1em; /* Adjust paragraph font size */
+    }
+ 
+    /* Offerings section adjustments */
+    .offerings {
+        flex-direction: column; /* Stack offerings vertically */
+        gap: 20px;
+    }
+ 
+    .offering {
+        width: 100%; /* Full width for cards */
+    }
+ 
+    .offering img {
+        width: 100%; /* Ensure images scale properly */
+    }
+}
+ 
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+        text-align: center; /* Center align menu items */
+    }
+ 
+    .hero h1 {
+        font-size: 1.5em; /* Smaller font for heading */
+    }
+ 
+    .hero p {
+        font-size: 0.9em; /* Smaller font for paragraph */
+    }
+ 
+    .job-listing h3 {
+        font-size: 1.2em
+    }
+ 
+    .apply-btn {
+        padding: 8px 10px;
+        font-size: 0.9em; /* Smaller font for buttons */
+    }
+ 
+    .offering-title {
+        font-size: 1.1em; /* Adjust offering title size */
+    }
+ 
+    .offering-desc {
+        font-size: 0.8em; /* Adjust offering description size */
+    }
+}
+ 

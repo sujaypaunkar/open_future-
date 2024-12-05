@@ -1,0 +1,106 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Body styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('banner.jpg') no-repeat center center fixed; /* Replace with your background image */
+    background-size: cover;
+}
+
+/* Centering the login container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Transparent login box with blur effect */
+.login-box {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.3); /* Transparent white background */
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+}
+
+/* Heading styling */
+.login-box h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Input fields */
+.input-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.3); /* Transparent background for input */
+    color: #fff;
+}
+
+.input-group input::placeholder {
+    color: #ddd; /* Light placeholder text */
+}
+
+/* Button styling */
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+/* Register link styling */
+p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ddd;
+}
+
+a {
+    color: #043060;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

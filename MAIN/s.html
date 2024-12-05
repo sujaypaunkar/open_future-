@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>ConsumerElectronics</title>
+           
+           
+           
+           
+ 
+            <style>
+                body {
+                    font-family: 'Montserrat', sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #f0f0f0;
+                    color: #333;
+                }
+ 
+                /* Title Section */
+                .title-section {
+                    width: 100%;
+                    height: 550px;
+                    background-image: url('BFSI_Service.jpg'); /* Background image for BFSI section */
+                    background-size: cover;
+                    background-position: center;
+                    background-attachment: fixed;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    color: white;
+                    animation: fadeInTitle 2s ease-out;
+                }
+ 
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f4f4f4; /* Light background for contrast */
+                    color: #333;
+                }
+ /* Dropdown button styling */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.dropdown-content .column a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-content .column a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+                /* Responsive Menu */
+                @media (max-width: 768px) {
+                    nav ul {
+                        flex-direction: column;
+                        gap: 10px;
+                        display: none;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        width: 100%;
+                        background: rgba(233, 229, 229, 0.63);
+                    }
+ 
+                    nav ul.active {
+                        display: flex;
+                    }
+ 
+                    nav ul li {
+                        text-align: center;
+                    }
+                }
+ 
+                /* Mobile Menu Toggle */
+                .menu-toggle {
+                    display: none;
+                    flex-direction: column;
+                    cursor: pointer;
+                }
+ 
+                .menu-toggle span {
+                    width: 30px;
+                    height: 3px;
+                    background: white;
+                    margin: 5px 0;
+                    transition: 0.3s;
+                }
+ 
+                @media (max-width: 768px) {
+                    .menu-toggle {
+                        display: flex;
+                    }
+                }
+ 
+                /* Additional Styling for Buttons or Highlights */
+                .service-logo {
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 10px;
+                }
+ 
+                a.nav-item {
+                    font-weight: bold;
+                }
+ 
+                .title-text {
+                    font-size: 3rem;
+                    font-weight: bold;
+                    color: black;
+                    margin: 0;
+                    opacity: 0;
+                    animation: slideUp 1.5s ease-out forwards;
+                }
+ 
+                /* Animations */
+                @keyframes fadeInTitle {
+                    0% { opacity: 0; }
+                    100% { opacity: 1; }
+                }
+                @keyframes slideUp {
+                    0% { transform: translateY(30px); opacity: 0; }
+                    100% { transform: translateY(0); opacity: 1; }
+                }
+ 
+.content-section {
+    padding: 40px;
+    background-color: #ffffff;
+    color: #333;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.content-text {
+    width: 50%;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.content-text ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.content-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-image img {
+    max-width: 100%;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+                
+ 
+                /* Additional Sections Styling */
+                .section-title {
+                    font-size: 1.8rem;
+                    margin-top: 20px;
+                    color: #333;
+                }
+ 
+                .section-content {
+                    font-size: 18px;
+                    line-height: 1.6;
+                    color: #555;
+                    margin-top: 10px;
+                }
+ 
+                /* General layout for the cards section */
+                .cards-section {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 20px;
+                    margin: 40px 0;
+                }
+ 
+                .cards-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0;
+}
+ 
+/* Card styles */
+.card {
+    background-color: #f0f4f8; /* Light blue-grey for contrast with white background */
+    border: 1px solid #e0e6ed; /* Subtle border */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden; /* Prevent overflow */
+}
+ 
+/* Heading styles */
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #1f4e79; /* Deep blue for headers */
+}
+ 
+/* Paragraph text styles */
+.card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #33475b; /* Darker blue-grey for text */
+    white-space: normal; /* Allow text wrapping */
+    overflow: hidden;
+    display: block;
+    opacity: 0; /* Start with invisible text */
+    transition: opacity 0.3s ease, transform 0.5s ease;
+    transform: translateY(20px); /* Start the text a bit lower */
+}
+ 
+/* Hover effect for cards */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #d9e7f4; /* Softer blue on hover */
+    border-color: #b3d1e8; /* Subtle color change for hover effect */
+}
+ 
+/* Hover effect for text */
+.card:hover p {
+    opacity: 1; /* Make text visible */
+    transform: translateY(0); /* Bring text into position */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    animation: typing 2s steps(40, end) 1 forwards; /* Simulate typing effect */
+}
+            </style>
+        </head>
+        <body>
+            <!-- Header section -->
+            <div class="dropdown">
+                <button class="dropbtn">INDUSTRIES
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  
+                  <div class="row">
+                    <div class="column">
+                      <a href="javascript:void(0)" onclick="BFSI()"><img src="./Services icon/ams.png" class="service-icon" alt="">BFSI</a>
+                      <a href="javascript:void(0)" onclick="Manufacturing()"><img src="./Services icon/ams.png" class="service-icon" alt="">Manufacturing</a>
+                      <a href="javascript:void(0)" onclick="Telecom()"><img src="./Services icon/ams.png" class="service-icon" alt="">Telecom</a>
+                      <a href="javascript:void(0)" onclick="ComputingSoftware()"><img src="./Services icon/ams.png" class="service-icon" alt="">Computing Software</a>
+                      <a href="javascript:void(0)" onclick="Automotive()"><img src="./Services icon/ams.png" class="service-icon" alt="">Automotive</a>
+                    </div>
+                    <div class="column">
+                      <a href="javascript:void(0)" onclick="ConsumerElectronics()"><img src="./Services icon/ams.png" class="service-icon" alt="">Consumer Electronics</a>
+                      <a href="javascript:void(0)" onclick="Energy()"><img src="./Services icon/ams.png" class="service-icon" alt="">Energy</a>
+                      <a href="javascript:void(0)" onclick="Healthcare()"><img src="./Services icon/ams.png" class="service-icon" alt="">Healthcare</a>
+                      <a href="javascript:void(0)" onclick="MediaEntertainmentServices()"><img src="./Services icon/ams.png" class="service-icon" alt="">Media & Entertainment Services</a>
+                      <a href="javascript:void(0)" onclick="Retail()"><img src="./Services icon/ams.png" class="service-icon" alt="">Retail</a>
+    
+                    </div>
+                    <div class="column">
+                      <a href="javascript:void(0)" onclick="TravelTourism()"><img src="./Services icon/ams.png" class="service-icon" alt="">Travel & Tourism </a>
+                      <a href="javascript:void(0)" onclick="Logistics()"><img src="./Services icon/ams.png" class="service-icon" alt="">Logistics</a>
+                      <a href="javascript:void(0)" onclick="Education()"><img src="./Services icon/ams.png" class="service-icon" alt="">Education</a>
+                      <a href="javascript:void(0)" onclick="Ecommerce()"><img src="./Services icon/ams.png" class="service-icon" alt="">E-commerce</a>
+                      <a href="javascript:void(0)" onclick="Agriculture()"><img src="./Services icon/ams.png" class="service-icon" alt="">Agriculture</a>
+                    </div>
+                    <div class="column">
+                      <a href="javascript:void(0)" onclick="Fintech()"><img src="./Services icon/ams.png" class="service-icon" alt="">Fintech</a>
+                      <a href="javascript:void(0)" onclick="GovernmentPublicSector()"><img src="./Services icon/ams.png" class="service-icon" alt="">Government & Public Sector</a>
+                      <a href="javascript:void(0)" onclick="Insurance()"><img src="./Services icon/ams.png" class="service-icon" alt="">Insurance</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+    
+    
+              <a href="./feedback/feedback.html" data-after="Feedback">FEEDBACK</a>
+    
+            
+            </div>    
+        </header> 
+      </div>
+    
+            <!-- Title Section -->
+            <div class="title-section">
+                <h1 class="title-text">ConsumerElectronics</h1>
+            </div>
+ 
+  <!-- Content Section -->
+<div class="content-section">
+      <div class="content-text">
+          <h2 class="section-title">Overview</h2>
+          <p class="section-content">
+              Consumer electronics form an essential part of modern life, offering products that enhance convenience, entertainment, and productivity. From cutting-edge gadgets to smart appliances, electronics continue to shape how we interact with the world.
+          </p>
+ 
+          <h2 class="section-title">Key Benefits</h2>
+          <p class="section-content">
+              **Innovation:** Stay ahead with the latest technology that simplifies daily tasks.<br>
+              **Convenience:** Smart devices designed to save time and effort in your everyday life.<br>
+              **Entertainment:** Access immersive experiences with high-quality audio, video, and gaming products.<br>
+              **Connectivity:** Seamless integration with other devices for smarter homes and workplaces.<br>
+              **Energy Efficiency:** Products built with sustainability in mind to reduce energy consumption.
+          </p>
+ 
+          <h2 class="section-title">Why Choose Us?</h2>
+          <p class="section-content">
+              **Wide Range of Products:** From smartphones to smart home systems, we cater to all your tech needs.<br>
+              **Affordable Pricing:** Quality electronics at competitive prices.<br>
+              **Trusted Brands:** Partnered with leading manufacturers to ensure reliability.<br>
+              **Customer Support:** Expert assistance for installation, troubleshooting, and maintenance.<br>
+              **Innovative Solutions:** Explore the latest trends in AI, IoT, and eco-friendly electronics.
+          </p>
+ 
+          <h2 class="section-title">Industries We Serve</h2>
+          <p class="section-content">
+              **Home Entertainment:** TVs, sound systems, and gaming consoles for ultimate leisure.<br>
+              **Smart Home:** IoT-enabled devices, including smart lights, thermostats, and security systems.<br>
+              **Personal Devices:** Smartphones, tablets, and wearables for everyday use.<br>
+              **Office Electronics:** Printers, monitors, and productivity tools for professional environments.<br>
+              **Kitchen Appliances:** Smart refrigerators, microwaves, and coffee makers for modern kitchens.<br>
+              **Health and Fitness:** Wearables and gadgets to monitor your fitness goals.<br>
+              **Energy Solutions:** Solar-powered electronics and energy-efficient devices.<br>
+              **Education:** Interactive displays, projectors, and e-learning tools.
+          </p>
+ 
+        
+               <div class="content-image">
+                <img src="SAP 4.jpg" alt="Description of image" class="responsive-image">
+
+                </div>
+            </div>
+              <!-- Example Cards Section for Consumer Electronics -->
+          <div class="cards-section">
+            <div class="card">
+                <h2>Smartphones</h2>
+                <p>
+                    Explore the latest smartphones with advanced features and superior performance.
+                    **Why Choose Us:** Wide selection, competitive pricing, and expert support.
+                </p>
+            </div>
+            <div class="card">
+                <h2>Smart Home Systems</h2>
+                <p>
+                    Transform your living space with IoT-enabled devices for convenience and security.
+                    **Why Choose Us:** Easy integration, cutting-edge technology, and energy-efficient solutions.
+                </p>
+            </div>
+            <div class="card">
+                <h2>Home Entertainment</h2>
+                <p>
+                    Enjoy immersive experiences with high-definition TVs, soundbars, and gaming systems.
+                    **Why Choose Us:** Best-in-class audio-visual products and exceptional customer service.
+                </p>
+            </div>
+        </div>
+            
+            
+            
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Footer Section</title>
+            <link rel="stylesheet" href="styles.css">
+            <style>
+                /* Global styles */
+                 #footer {
+                 /* Use variable or specific color */
+                padding: 40px;
+                font-family: 'Arial', sans-serif;
+                background-image: url(77.png);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+             
+                    .footer-container {
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                    }
+             
+                    .footer-column {
+                        flex: 1;
+                        min-width: 250px;
+                        margin-right: 20px;
+                    }
+                        #footer h1 {
+                color: #f1c40f; /* Changed heading color to a vibrant yellow */
+                font-size: medium;
+                font-weight: 500;
+                font-size: 1.5rem;
+                -webkit-text-fill-color: #f1f1f1;
+                letter-spacing: 0.1rem;
+                margin: 10px 0;
+                text-align: left;
+            }
+             
+                   #footer h2 {
+                color: #f1c40f; /* Changed heading color to a vibrant yellow */
+                font-size: medium;
+                font-weight: 500;
+                font-size: 1.5rem;
+                -webkit-text-fill-color: #f1f1f1;
+                letter-spacing: 0.1rem;
+                margin: 10px 0;
+                text-align: left;
+            }
+             
+                    .footer-column ul {
+                        list-style: none;
+                        padding: 0;
+                    }
+             
+                    .footer-column li {
+                        margin-bottom: 10px;
+                    }
+             
+                    .footer-column li a {
+                        text-decoration: none;
+                        color: white;
+                        transition: color 0.3s ease;
+                    }
+             
+                    .footer-column li a:hover {
+                        color: #f4f4f4;
+                    }
+             
+                    .footer-logo img {
+                        max-width: 150px;
+                        margin-bottom: 20px;
+                    }
+             
+                    .footer-bottom {
+                        text-align: center;
+                        padding: 20px;
+                        background-color: light blue;
+                        font-size: 14px;
+                    }
+             
+                    /* Responsive Design */
+                    @media (max-width: 768px) {
+                        .rig-framework {
+                            flex-direction: column;
+                            align-items: center;
+                            padding: 10px;
+                        }
+             
+                        .framework-content {
+                            width: 90%;
+                            margin-bottom: 20px;
+                        }
+             
+                        .framework-image {
+                            width: 90%;
+                        }
+             
+                        .footer-container {
+                            flex-direction: column;
+                            align-items: center;
+                        }
+             
+                        .footer-column {
+                            margin-right: 0;
+                            margin-bottom: 20px;
+                        }
+                    }
+            </style>
+            </head>
+            <body>
+            </div>
+             
+              <!-- Footer Section -->
+            <section id="footer">
+            <div class="footer-container">
+            <!-- Services Section (Left) -->
+            <div class="footer-column">
+            <div class="footer-logo">
+            <img src="./brand.png" alt="Brand Logo">
+            </div>
+            <ul>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Our Global Presence</a></li>
+            <li><a href="#">Our Portfolio Companies</a></li>
+            <li><a href="#">Our Partners</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Awards & Recognition</a></li>
+            </ul>
+            </div>
+             
+                  <!-- Solutions Section (Middle) -->
+            <div class="footer-column">
+            <h1>Solutions</h1>
+            <ul>
+            <li><a href="#">Deep-Tech AI Solutions</a></li>
+            <li><a href="#">Recruitment Solution</a></li>
+            <li><a href="#">Geographic Information System</a></li>
+            <li><a href="#">Business Management Solution</a></li>
+            <li><a href="#">AI and ML Banking Solutions</a></li>
+            <li><a href="#">Conversational AI</a></li>
+            <li><a href="#">Cloud Telephony</a></li>
+            <li><a href="#">Unified Secrets Management Platform</a></li>
+            <li><a href="#">No-Code eCommerce Solution</a></li>
+            <li><a href="#">A Bank in Any App</a></li>
+            <li><a href="#">No-Code Workflow Automation and CRM</a></li>
+            </ul>
+            </div>
+             
+                  <!-- Services Section (Right) -->
+            <div class="footer-column">
+            <h1>Services</h1>
+            <ul>
+            <li><a href="#">AMS</a></li>
+            <li><a href="#">ERP & CRM</a></li>
+            <li><a href="#">Oracle</a></li>
+            <li><a href="#">Murex</a></li>
+            <li><a href="#">Cloud Services</a></li>
+            <li><a href="#">Professional & Managed Services</a></li>
+            <li><a href="#">Mobility</a></li>
+            <li><a href="#">Data Analytics</a></li>
+            <li><a href="#">Geospatial Services</a></li>
+            <li><a href="#">SAP</a></li>
+            </ul>
+            </div>
+             
+                  <!-- Additional Services Section (Left) -->
+            <div class="footer-column">
+            <h1>More Services</h1>
+            <ul>
+            <li><a href="#">ERP & CRM</a></li>
+            <li><a href="#">Emerging Tech & Projects</a></li>
+            <li><a href="#">Infrastructure Management Services</a></li>
+            <li><a href="#">Professional & Managed Services</a></li>
+            <li><a href="#">Communication Services</a></li>
+            <li><a href="#">Site Reliability Engineering & DevOps</a></li>
+            <li><a href="#">Consulting Services</a></li>
+            <li><a href="#">Business Process Outsourcing</a></li>
+            <li><a href="#">Testing Services</a></li>
+            <li><a href="#">Training Services</a></li>
+            </ul>
+            </div>
+            </div>
+             
+                <!-- Footer Bottom -->
+            <div class="footer-bottom">
+            <p>&copy; 2024 Open Future Technologies. All rights reserved.</p>
+            </div>
+            </section>
+             
+            </body>
+            </html>`
+ 
+ 

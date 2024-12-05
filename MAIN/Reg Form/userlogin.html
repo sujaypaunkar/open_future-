@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <link rel="stylesheet" href="user.css">
+</head>
+
+<body>
+    <h1>User List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+            </tr>
+        </thead>
+        <tbody id="user-table">
+            <!-- Data will be dynamically populated -->
+        </tbody>
+    </table>
+
+    <script>
+        async function fetchUserList() {
+            try {
+                const response = await fetch("/listOfUser");
+                if (response.ok) {
+                    const users = await response.json();
+                    const userTable = document.getElementById("user-table");
+
+                    users.forEach(user => {
+                        const row = document.createElement("tr");
+                        row.innerHTML = `
+                            <td>${user.id}</td>
+                            <td>${user.username}</td>
+                            <td>${user.fullName}</td>
+                            <td>${user.email}</td>
+                            <td>${user.phoneNumber}</td>
+                        `;
+                        userTable.appendChild(row);
+                    });
+                } else {
+                    alert("Failed to fetch user list.");
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Unable to fetch data.");
+            }
+        }
+
+        // Fetch user list on page load
+        fetchUserList();
+    </script>
+</body>
+
+</html>

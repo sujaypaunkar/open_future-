@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oracle</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        /* Title Section */
+        .title-section {
+            width: 100%;
+            height: 550px;
+            background-image: url('Service.jpg'); /* Background image for Oracle section */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            animation: fadeInTitle 2s ease-out;
+        }
+
+        .title-text {
+            font-size: 3rem;
+            font-weight: bold;
+            color: black;
+            margin: 0;
+            opacity: 0;
+            animation: slideUp 1.5s ease-out forwards;
+        }
+
+        /* Animations */
+        @keyframes fadeInTitle {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes slideUp {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 40px;
+            background-color: #ffffff;
+            color: #333;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: -100px;
+            border-radius: 10px;
+            opacity: 0;
+            animation: fadeInContent 2s ease-out 1s forwards;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        @keyframes fadeInContent {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .content-text {
+            width: 50%;
+            font-size: 22px;
+            line-height: 1.8;
+        }
+.content-image {
+width: 45%;
+height: 100%; /* Set height to 100% of the container */
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.content-image img {
+width: 100%;
+height: 100%; /* Ensure the image height fills the container */
+object-fit: cover; /* Scale the image to cover the container */
+border-radius: 8px;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+        /* Media Query */
+        @media (max-width: 768px) {
+            .content-section {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .content-text {
+                font-size: 20px;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .content-image img {
+                width: 90%;
+            }
+        }
+            @media (max-width: 768px) {
+.content-image {
+width: 100%; /* Make image container full-width */
+height: 50vh; /* Adjust height for mobile view */
+}
+.content-image img {
+width: 100%;
+height: 100%;
+}
+}
+    </style>
+</head>
+<body>
+
+    <!-- Title Section -->
+    <div class="title-section">
+        <h1 class="title-text">Oracle</h1>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="content-section">
+        <div class="content-text">
+            <h1>Oracle</h1>
+            <p>Oracle provides powerful database and cloud solutions, allowing businesses to manage data efficiently and make smarter decisions. With its suite of integrated applications and infrastructure, Oracle helps businesses streamline operations and enhance customer relationships.</p>
+            
+            <h2 class="section-title">Core Features of Oracle</h2>
+            <p class="section-content">
+                <ul>
+                    <li><strong>Cloud Infrastructure:</strong> Oracle Cloud provides comprehensive, secure, and scalable cloud solutions.</li>
+                    <li><strong>Database Management:</strong> Oracle offers the world’s most advanced database solutions, supporting data storage, retrieval, and analysis.</li>
+                    <li><strong>Enterprise Resource Planning (ERP):</strong> Integrates all aspects of business management into one system.</li>
+                    <li><strong>Analytics and AI:</strong> Oracle's cloud infrastructure and applications offer business intelligence, data analytics, and machine learning capabilities to optimize decision-making.</li>
+                </ul>
+            </p>
+
+            <h2 class="section-title">Benefits of Oracle</h2>
+            <p class="section-content">Oracle enables businesses to modernize IT infrastructure, reduce costs, and scale operations globally. The security features ensure that data is protected against breaches, while the cloud-based model offers flexibility and access to a wide range of services.</p>
+            
+            <h2 class="section-title">Impact on Business Operations</h2>
+            <p class="section-content">With Oracle’s solutions, companies gain better data management and insight, which leads to improved operational efficiency, faster decision-making, and a greater competitive advantage in their respective industries.</p>
+        </div>
+
+        <!-- Content Image (Right Side) -->
+        <div class="content-image">
+            <img src="Oracle (1).jpg" alt="Oracle Image"> <!-- Replace with actual image path -->
+            
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+        history.pushState({ page: "Oracle" }, "Oracle", "#oracle");
+        window.addEventListener("popstate", function (event) {
+            if (!event.state || event.state.page !== "Oracle") {
+                location.reload();
+            }
+        });
+    </script>
+</body>
+</html>
+`;

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Our Vision</title>
+            <style>
+                body {
+                    font-family: 'Montserrat', sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #f0f0f0;
+                    color: #333;
+                }
+
+                /* Title Section */
+                .title-section {
+                    width: 100%;
+                    height: 550px;
+                    background-image: url('About.jpg'); /* Background image for vision section */
+                    background-size: cover;
+                    background-position: center;
+                    background-attachment: fixed;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    color: black;
+                    animation: fadeInTitle 2s ease-out;
+                }
+
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f4f4f4; /* Light background for contrast */
+                    color: #333;
+                  }
+                   
+                  /* Navigation Bar */
+                  nav {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    background-color: rgba(0, 0, 0, 0.692); /* Semi-transparent background */
+                    backdrop-filter: blur(10px);
+                    padding: 10px 5%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    z-index: 1000;
+                  }
+                   
+                  .logo img {
+                    max-width: 120px;
+                    height: auto;
+                  }
+                   
+                  /* Main Navigation Links */
+                  nav ul {
+                    list-style: none;
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                  }
+                   
+                  nav ul li {
+                    position: relative;
+                  }
+                   
+                  nav ul a {
+                    color: #fff;
+                    text-decoration: none;
+                    font-size: 16px;
+                    padding: 10px 15px;
+                    transition: color 0.3s, background-color 0.3s;
+                  }
+                   
+                  nav ul a:hover {
+                    color: #f0a500;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    border-radius: 5px;
+                  }
+                   
+                  /* Dropdown Menus */
+                  nav ul li ul {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background-color: rgba(187, 180, 180, 0.9); /* Dark dropdown background */
+                    padding: 10px 0;
+                    border-radius: 5px;
+                    box-shadow: 0 4px 8px rgba(172, 169, 169, 0.3);
+                    z-index: 999;
+                  }
+                   
+                  nav ul li:hover ul {
+                    display: block;
+                  }
+                   
+                  nav ul li ul li {
+                    white-space: nowrap;
+                  }
+                   
+                  nav ul li ul a {
+                    display: flex;
+                    align-items: center;
+                    padding: 10px 20px;
+                    font-size: 14px;
+                  }
+                   
+                  nav ul li ul a img {
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 10px;
+                  }
+                   
+                  nav ul li ul a:hover {
+                    background-color: rgba(240, 165, 0, 0.7);
+                  }
+                   
+                  /* Responsive Menu */
+                  @media (max-width: 768px) {
+                    nav ul {
+                      flex-direction: column;
+                      gap: 10px;
+                      display: none;
+                      position: absolute;
+                      top: 100%;
+                      left: 0;
+                      width: 100%;
+                      background: rgba(233, 229, 229, 0.63);
+                    }
+                   
+                    nav ul.active {
+                      display: flex;
+                    }
+                   
+                    nav ul li {
+                      text-align: center;
+                    }
+                  }
+                   
+                  /* Mobile Menu Toggle */
+                  .menu-toggle {
+                    display: none;
+                    flex-direction: column;
+                    cursor: pointer;
+                  }
+                   
+                  .menu-toggle span {
+                    width: 30px;
+                    height: 3px;
+                    background: white;
+                    margin: 5px 0;
+                    transition: 0.3s;
+                  }
+                   
+                  @media (max-width: 768px) {
+                    .menu-toggle {
+                      display: flex;
+                    }
+                  }
+                   
+                  /* Additional Styling for Buttons or Highlights */
+                  .service-logo {
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 10px;
+                  }
+                   
+                  a.nav-item {
+                    font-weight: bold;
+                  }
+
+                .title-text {
+                    font-size: 3rem;
+                    font-weight: bold;
+                    color: black;
+                    margin: 0;
+                    opacity: 0;
+                    animation: slideUp 1.5s ease-out forwards;
+                }
+
+                /* Animations */
+                @keyframes fadeInTitle {
+                    0% { opacity: 0; }
+                    100% { opacity: 1; }
+                }
+                @keyframes slideUp {
+                    0% { transform: translateY(30px); opacity: 0; }
+                    100% { transform: translateY(0); opacity: 1; }
+                }
+
+                /* Content Section */
+                .content-section {
+                    padding: 40px;
+                    background-color: #ffffff;
+                    color: #333;
+                    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                    margin-top: -100px;
+                    border-radius: 10px;
+                    opacity: 0;
+                    animation: fadeInContent 2s ease-out 1s forwards;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                }
+
+                @keyframes fadeInContent {
+                    0% { opacity: 0; }
+                    100% { opacity: 1; }
+                }
+
+                .content-text {
+                    width: 50%;
+                    font-size: 26px;
+                    line-height: 1.8;
+                }
+
+                .content-image {
+                    width: 45%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .content-image img {
+                    width: 100%;
+                    max-width: 600px;
+                    border-radius: 8px;
+                    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+                }
+
+                /* Media Query */
+                @media (max-width: 768px) {
+                    .content-section {
+                        flex-direction: column;
+                        padding: 20px;
+                    }
+                    .content-text {
+                        font-size: 22px;
+                        width: 100%;
+                        margin-bottom: 20px;
+                    }
+                    .content-image img {
+                        width: 90%;
+                    }
+                }
+            </style>
+        </head>
+        <body>
+
+            <!-- Title Section -->
+            <div class="title-section">
+                <h1 class="title-text">Our Vision</h1>
+            </div>
+
+            <!-- Main Content Section -->
+            <div class="content-section">
+                <div class="content-text">
+                    <h1>Our Vision</h1>
+                    <p>At OpenFuture Technologies, our vision is to innovate and lead the way in the tech industry, making sustainable and impactful solutions accessible to all. We are driven by our commitment to excellence and a forward-thinking approach that transforms ideas into reality.</p>
+                    
+                    <h2>Global Impact</h2>
+                    <p>We aim to expand our influence globally by delivering solutions that empower businesses, inspire individuals, and foster a community of tech-savvy leaders.</p>
+                    
+                    <h2>Commitment to Innovation</h2>
+                    <p>Innovation is at the core of what we do. We strive to stay ahead of industry trends, exploring new technologies and methodologies that make a positive difference in our clients' lives and the world.</p>
+                </div>
+
+                <!-- Content Image (Right Side) -->
+                <div class="content-image">
+                    <img src="Blog4.jpg" alt="Our Vision Image"> <!-- Replace with actual image path -->
+                </div>
+            </div>
+
+            <script>
+                function goBack() {
+                    window.history.back();
+                }
+                history.pushState({ page: "Our Vision" }, "Our Vision", "#ourvision");
+                window.addEventListener("popstate", function (event) {
+                    if (!event.state || event.state.page !== "Our Vision") {
+                        location.reload();
+                    }
+                });
+            </script>
+        </body>
+        </html>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Footer Section</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+    /* Global styles */
+      #footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 20px;
+            margin-top: auto;
+        }
+ 
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+ 
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-right: 20px;
+        }
+ 
+        .footer-column h1 {
+            font-size: 25px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+ 
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+ 
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+ 
+        .footer-column li a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease;
+        }
+ 
+        .footer-column li a:hover {
+            color: #f4f4f4;
+        }
+ 
+        .footer-logo img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+ 
+        .footer-bottom {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            font-size: 14px;
+        }
+ 
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .rig-framework {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+            }
+ 
+            .framework-content {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+ 
+            .framework-image {
+                width: 90%;
+            }
+ 
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+ 
+            .footer-column {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+</style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+          <img src="./brand.png" alt="Company Logo">  
+        </div>
+        <ul>
+          <li><a href="#home">HOME</a></li>
+          <li>
+            <a href="#about" class="nav-item about-tab">ABOUT US</a>
+            <ul class="dropdown">
+              <li><a href="javascript:void(0)" onclick="leadershipTeam()"><img src=".\About us\team icon.png"  class="service-logo">Our Leadership Team</a></li>
+              <li><a href="javascript:void(0)" onclick="openVentureCapital()"><img src=".\About us\venture icon.png"  class="service-logo">Our Venture Capital Portfolio</a></li>
+              <li><a href="#partners"><img src=".\About us\partner icon (1).png"  class="service-logo">Our Partners</a></li>
+              <li><a href="#clientele"><img src=".\About us\client icon.png"  class="service-logo">Our Clientele</a></li>
+              <li><a href="javascript:void(0)" onclick="csr()"><img src=".\About us\social responsibility icon jpg.png"  class="service-logo">Corporate Social Responsibility</a></li>
+              <li><a href="javascript:void(0)" onclick="codeOfConduct()"><img src=".\About us\code of conduct icon.png"  class="service-logo">Code Of Conduct</a></li>
+              <li><a href="javascript:void(0)" onclick="valueProposition()"><img src=".\About us\venture icon.png"  class="service-logo">Value Proposition</a></li>
+              <li><a href="javascript:void(0)" onclick="safeShoreMethodology()"><img src=".\About us\safe shore methodology icon.png"  class="service-logo">Safe Shore Methodology</a></li>
+              <li><a href="javascript:void(0)" onclick="openRIGFramework()"><img src=".\About us\RIG framework icon.png"  class="service-logo">RIG Framework</a></li>
+              <li><a href="javascript:void(0)" onclick="awardsRecognition()"><img src=".\About us\awards icon 2.png"  class="service-logo">Awards & Recognition</a></li>
+              <li><a href="javascript:void(0)" onclick="ourGroupCompanies()"><img src=".\About us\group of companies icon 2.png" class="service-logo">Our Group Companies</a></li>
+              <li><a href="javascript:void(0)" onclick="ourvision()"><img src=".\About us\our vision icon.png"  class="service-logo">Our Vision</a></li>
+              <li><a href="javascript:void(0)" onclick="Mission()"><img src=".\About us\our mission icon.png"  class="service-logo">Our Mission</a></li>
+              <li><a href="javascript:void(0)" onclick="Values()"><img src=".\About us\our values icon.png"  class="service-logo">Our Values</a></li>
+                 
+            </ul>
+    <li class="nav-item">
+    <a href="#services" class="services-tab">SERVICES</a>
+    <ul class="dropdown-services">
+      <div class="service-buttons">
+        <li><a href="javascript:void(0)" onclick="ams()"><img src=".\Services icon\ams icon.png"  class="service-logo"> AMS</a>
+          <li><a href="javascript:void(0)" onclick="erpCrm()"><img src=".\Services icon\erp crm icon.png" class="service-logo">ERP & CRM</a></li>
+          <li><a href="javascript:void(0)" onclick="sap()"><img src=".\Services icon\sap.png" class="service-logo">SAP</a></li>
+          <li><a href="javascript:void(0)" onclick="oracle()"><img src=".\Services icon\oracle.png" class="service-logo">Oracle</a></li>
+          <li><a href="javascript:void(0)" onclick="salesforce()"><img src=".\Services icon\salesforce.png"  class="service-logo">Salesforce</a></li>
+          <li><a href="javascript:void(0)" onclick="murex()"><img src=".\Services icon\murex.png" class="service-logo">Murex</a></li>
+          <li><a href="javascript:void(0)" onclick="cloudServices()"><img src=".\Services icon\cloud-service.png" class="service-logo">Cloud Services</a></li>
+          <li><a href="javascript:void(0)" onclick="managedServices()"><img src=".\Services icon\mangedservice.png" class="service-logo">Professional & Managed Services</a></li>
+          <li><a href="javascript:void(0)" onclick="mobility()"><img src=".\Services icon\mobility.png" class="service-logo">Mobility</a></li>
+          <li><a href="javascript:void(0)" onclick="emergingTech()"><img src=".\Services icon\emerging-tech-project.png" class="service-logo">Emerging Tech & Projects</a></li>
+          <li><a href="javascript:void(0)" onclick="dataAnalytics()"><img src=".\Services icon\data analytics.png" class="service-logo">Data Analytics</a></li>
+          <li><a href="javascript:void(0)" onclick="infrastructure()"><img src=".\Services icon\infrastructure  icon.png" class="service-logo">Infrastructure Management Services</a></li>
+          <li><a href="javascript:void(0)" onclick="geospatial()"><img src=".\Services icon\geospotical-icon.png" class="service-logo">Geospatial Services</a></li>
+          <li><a href="javascript:void(0)" onclick="communication()"><img src=".\Services icon\communication-service.png" class="service-logo">Communication Services</a></li>
+          <li><a href="javascript:void(0)" onclick="siteReliability()"><img src=".\Services icon\site icon2.png" class="service-logo">Site Reliability Engineering & DevOps</a></li>
+          <li><a href="javascript:void(0)" onclick="consulting()"><img src=".\Services icon\consultig icon 3.png" class="service-logo">Consulting Services</a></li>
+          <li><a href="javascript:void(0)" onclick="bpo()"><img src=".\Services icon\business process outsoursing.png" class="service-logo">Business Process Outsourcing</a></li>
+          <li><a href="javascript:void(0)" onclick="testing()"><img src=".\Services icon\testing-service.png" class="service-logo">Testing Services</a></li>
+          <li><a href="javascript:void(0)" onclick="training()"><img src=".\Services icon\training-service.png" class="service-logo">Training Services</a></li>
+    </ul>
+    </li>
+     
+    <li>
+    <a href="javascript:void(0)" onclick="showBlogs()">BLOGS</a>
+    </li>
+          <li><a href="./careers/careers.html">CAREERS</a></li>
+          <li>
+            <a href="javascript:void(0)" onclick="showIndustries()">INDUSTRIES</a>
+          </li>
+         
+     
+          <li><a href="./feedback/feedback.html" data-after="Feedback">FEEDBACK</a></li>
+        </ul>
+      </nav>    
+</div>
+ 
+  <!-- Footer Section -->
+<section id="footer">
+<div class="footer-container">
+<!-- Services Section (Left) -->
+<div class="footer-column">
+<div class="footer-logo">
+<img src="./brand.png" alt="Brand Logo">
+</div>
+<ul>
+<li><a href="#">Our Story</a></li>
+<li><a href="#">Our Global Presence</a></li>
+<li><a href="#">Our Portfolio Companies</a></li>
+<li><a href="#">Our Partners</a></li>
+<li><a href="#">Careers</a></li>
+<li><a href="#">Awards & Recognition</a></li>
+</ul>
+</div>
+ 
+      <!-- Solutions Section (Middle) -->
+<div class="footer-column">
+<h1>Solutions</h1>
+<ul>
+<li><a href="#">Deep-Tech AI Solutions</a></li>
+<li><a href="#">Recruitment Solution</a></li>
+<li><a href="#">Geographic Information System</a></li>
+<li><a href="#">Business Management Solution</a></li>
+<li><a href="#">AI and ML Banking Solutions</a></li>
+<li><a href="#">Conversational AI</a></li>
+<li><a href="#">Cloud Telephony</a></li>
+<li><a href="#">Unified Secrets Management Platform</a></li>
+<li><a href="#">No-Code eCommerce Solution</a></li>
+<li><a href="#">A Bank in Any App</a></li>
+<li><a href="#">No-Code Workflow Automation and CRM</a></li>
+</ul>
+</div>
+ 
+      <!-- Services Section (Right) -->
+<div class="footer-column">
+<h1>Services</h1>
+<ul>
+<li><a href="#">AMS</a></li>
+<li><a href="#">ERP & CRM</a></li>
+<li><a href="#">Oracle</a></li>
+<li><a href="#">Murex</a></li>
+<li><a href="#">Cloud Services</a></li>
+<li><a href="#">Professional & Managed Services</a></li>
+<li><a href="#">Mobility</a></li>
+<li><a href="#">Data Analytics</a></li>
+<li><a href="#">Geospatial Services</a></li>
+<li><a href="#">SAP</a></li>
+</ul>
+</div>
+ 
+      <!-- Additional Services Section (Left) -->
+<div class="footer-column">
+<h1>More Services</h1>
+<ul>
+<li><a href="#">ERP & CRM</a></li>
+<li><a href="#">Emerging Tech & Projects</a></li>
+<li><a href="#">Infrastructure Management Services</a></li>
+<li><a href="#">Professional & Managed Services</a></li>
+<li><a href="#">Communication Services</a></li>
+<li><a href="#">Site Reliability Engineering & DevOps</a></li>
+<li><a href="#">Consulting Services</a></li>
+<li><a href="#">Business Process Outsourcing</a></li>
+<li><a href="#">Testing Services</a></li>
+<li><a href="#">Training Services</a></li>
+</ul>
+</div>
+</div>
+ 
+    <!-- Footer Bottom -->
+<div class="footer-bottom">
+<p>&copy; 2024 Open Future Technologies. All rights reserved.</p>
+</div>
+</section>
+ 
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Forms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f5f5f5;
+            height: 100vh;
+        }
+
+        h1 {
+            margin-top: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 90%;
+            max-width: 1000px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        table th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        table td {
+            background-color: #f9f9f9;
+        }
+        table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    min-width: 150px;
+}
+
+table th:first-child, table td:first-child {
+    min-width: 60px; /* Adjust for smaller width */
+    max-width: 80px;
+}
+
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applicant Form</title>
+</head>
+<body>
+
+    <h2>Applicants Form List</h2>
+    <table id="applicantsTable">
+        <thead>
+            <tr>
+                <th>Sr No.</th>
+                <th>Full Name</th>
+                <th>Phone Number</th>
+                <!-- <th>gender</th> -->
+                <th>Email</th>
+                <th>Experience</th>
+                <th>Skills</th>
+                <th>Job Title</th>
+                <th>Date</th>
+                <th>Resume</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+  async function fetchAllApplicants() {
+    const apiURL = "http://localhost:8800/application/getAllApplicants"; // API endpoint
+    const tableBody = document.querySelector("#applicantsTable tbody"); // Table body selector
+
+    // Display a loading message while fetching data
+    tableBody.innerHTML = `<tr><td colspan="8">Loading applicants...</td></tr>`;
+
+    try {
+        const response = await fetch(apiURL);
+
+        if (!response.ok) {
+            const errorMessage = await response.text(); 
+            tableBody.innerHTML = `<tr><td colspan="8">Error fetching data.</td></tr>`;
+            return;
+        }
+
+        const applicants = await response.json();
+
+        if (applicants.length > 0) {
+            tableBody.innerHTML = ""; // Clear table body
+            applicants.forEach((applicant, index) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${applicant.fullName || "N/A"}</td>
+                    <td>${applicant.phoneNumber || "N/A"}</td>
+                   
+                    <td>${applicant.email || "N/A"}</td>
+                    <td>${applicant.experience || "N/A"}</td>
+                    <td>${applicant.skills || "N/A"}</td>
+                    <td>${applicant.jobTitle || "N/A"}</td>
+                    <td>${applicant.date ? new Date(applicant.date).toLocaleDateString() : "N/A"}</td>
+                    <td>
+                        <a href="http://localhost:8800/application/getAllApplicants/${applicant.id}/cv" target="_blank" download>
+                            Download Resume
+                        </a>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+        } else {
+            tableBody.innerHTML = `<tr><td colspan="8">No applicants found.</td></tr>`;
+        }
+    } catch (error) {
+        // Handle network or unexpected errors
+        console.error("Error fetching applicants:", error);
+        tableBody.innerHTML = `<tr><td colspan="8">An error occurred: ${error.message}</td></tr>`;
+    }
+}
+document.addEventListener("DOMContentLoaded", fetchAllApplicants);
+
+</script>
+</body>
+</html>

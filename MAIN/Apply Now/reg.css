@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('banner.jpg') no-repeat center center/cover;
+}
+
+.logo img {
+    width: 180px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+}
+
+.wrapper {
+    width: 420px;
+    background: rgba(0, 0, 0, 0.43);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.8px);
+    -webkit-backdrop-filter: blur(9.8px);
+    border: 1px solid rgba(255, 255, 255, 0.66);
+    color: #fff;
+    padding: 30px 40px;
+}
+
+.wrapper h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.user-details .input-box,
+
+ 
+.gender-details {
+    margin-bottom: 20px;
+}
+.user-details {
+    display: flex;
+    flex-direction: column;
+    gap:20px; /* Adjust gap value for desired spacing */
+}
+
+.input-box {
+    width: 100%;
+    height: 50px;
+}
+
+.input-box input,
+.input-box textarea {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    font-size: 14px;
+    color: #fff;
+    padding-left: 10px;
+}
+
+.input-box textarea {
+    height: auto;
+    padding-top: 10px;
+}
+
+.input-box input::placeholder,
+.input-box textarea::placeholder {
+    color: #fff;
+}
+
+.input-box input[type="file"] {
+    margin-top: 5px; /* Adds space above the file input */
+    padding: 15px; /* Adds some padding for a better look */
+    color: #fff; /* Keeps the text color consistent */
+    cursor: pointer;
+}
+
+.gender-details {
+    margin: 30px 0;
+}
+
+.gender-title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.category label {
+    margin-right: 15px;
+}
+
+.category input {
+    margin-right: 5px;
+}
+
+.button .btn {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-top: 5px;
+}
+
+.button .btn:hover {
+    background-color: blue;
+    color: white;
+}

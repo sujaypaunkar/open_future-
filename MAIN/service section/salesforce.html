@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salesforce</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        /* Title Section */
+        .title-section {
+            width: 100%;
+            height: 550px;
+            background-image: url('Service.jpg'); /* Background image for Salesforce section */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            animation: fadeInTitle 2s ease-out;
+        }
+
+        .title-text {
+            font-size: 3rem;
+            font-weight: bold;
+            color: black;
+            margin: 0;
+            opacity: 0;
+            animation: slideUp 1.5s ease-out forwards;
+        }
+
+        /* Animations */
+        @keyframes fadeInTitle {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes slideUp {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 40px;
+            background-color: #ffffff;
+            color: #333;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: -100px;
+            border-radius: 10px;
+            opacity: 0;
+            animation: fadeInContent 2s ease-out 1s forwards;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        @keyframes fadeInContent {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .content-text {
+            width: 50%;
+            font-size: 22px;
+            line-height: 1.8;
+        }
+
+        .content-image {
+            width: 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content-image img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Media Query */
+        @media (max-width: 768px) {
+            .content-section {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .content-text {
+                font-size: 20px;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .content-image img {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Title Section -->
+    <div class="title-section">
+        <h1 class="title-text">Salesforce</h1>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="content-section">
+        <div class="content-text">
+            <h1>Salesforce</h1>
+            <p>Salesforce is a cloud-based CRM solution that helps organizations build deeper relationships with customers, enhance customer satisfaction, and grow their business. It provides businesses with an array of customer management tools and analytics to optimize customer service, marketing, and sales processes.</p>
+
+            <h2 class="section-title">Core Features of Salesforce</h2>
+            <p class="section-content">
+                <ul>
+                    <li><strong>Customer Relationship Management (CRM):</strong> Centralizes customer data to provide better insights and support personalized experiences.</li>
+                    <li><strong>Sales Cloud:</strong> Automates sales processes, forecasts revenue, and helps increase conversion rates with predictive analytics.</li>
+                    <li><strong>Service Cloud:</strong> Enhances customer service through case management, knowledge bases, and real-time support.</li>
+                    <li><strong>Marketing Cloud:</strong> Provides tools for email marketing, social media engagement, and personalized advertising.</li>
+                </ul>
+            </p>
+
+            <h2 class="section-title">Benefits of Salesforce</h2>
+            <p class="section-content">Salesforce helps businesses manage customer interactions efficiently, automate repetitive tasks, and ensure more personalized communications. By using Salesforce, organizations improve their overall sales performance and customer loyalty, leading to increased revenue.</p>
+            
+            <h2 class="section-title">Impact on Business Operations</h2>
+            <p class="section-content">Salesforce’s integration of various business functions on one platform enhances collaboration between teams, reduces silos, and helps businesses deliver seamless customer experiences that drive growth.</p>
+        </div>
+
+        <!-- Content Image (Right Side) -->
+        <div class="content-image">
+            <img src="salesforce.jpeg" alt="Salesforce Image"> <!-- Replace with actual image path -->
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+        history.pushState({ page: "Salesforce" }, "Salesforce", "#salesforce");
+        window.addEventListener("popstate", function (event) {
+            if (!event.state || event.state.page !== "Salesforce") {
+                location.reload();
+            }
+        });
+    </script>
+</body>
+</html>
+`;

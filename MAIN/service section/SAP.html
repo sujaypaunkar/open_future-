@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>SAP</title>
+            <style>
+                body {
+                    font-family: 'Montserrat', sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #f0f0f0;
+                    color: #333;
+                }
+
+                /* Title Section */
+                .title-section {
+                    width: 100%;
+                    height: 550px;
+                    background-image: url('Service.jpg'); /* Background image for SAP section */
+                    background-size: cover;
+                    background-position: center;
+                    background-attachment: fixed;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    color: white;
+                    animation: fadeInTitle 2s ease-out;
+                }
+
+                .title-text {
+                    font-size: 3rem;
+                    font-weight: bold;
+                    color: black;
+                    margin: 0;
+                    opacity: 0;
+                    animation: slideUp 1.5s ease-out forwards;
+                }
+
+                /* Animations */
+                @keyframes fadeInTitle {
+                    0% { opacity: 0; }
+                    100% { opacity: 1; }
+                }
+                @keyframes slideUp {
+                    0% { transform: translateY(30px); opacity: 0; }
+                    100% { transform: translateY(0); opacity: 1; }
+                }
+
+                /* Content Section */
+                .content-section {
+                    padding: 40px;
+                    background-color: #ffffff;
+                    color: #333;
+                    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                    margin-top: -100px;
+                    border-radius: 10px;
+                    opacity: 0;
+                    animation: fadeInContent 2s ease-out 1s forwards;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                }
+
+                @keyframes fadeInContent {
+                    0% { opacity: 0; }
+                    100% { opacity: 1; }
+                }
+
+                .content-text {
+                    width: 50%;
+                    font-size: 22px;
+                    line-height: 1.8;
+                }
+
+                .content-image {
+                    width: 45%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .content-image img {
+                    width: 100%;
+                    max-width: 600px;
+                    border-radius: 8px;
+                    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+                }
+
+                /* Media Query */
+                @media (max-width: 768px) {
+                    .content-section {
+                        flex-direction: column;
+                        padding: 20px;
+                    }
+                    .content-text {
+                        font-size: 20px;
+                        width: 100%;
+                        margin-bottom: 20px;
+                    }
+                    .content-image img {
+                        width: 90%;
+                    }
+                }
+            </style>
+        </head>
+        <body>
+
+            <!-- Title Section -->
+            <div class="title-section">
+                <h1 class="title-text">SAP</h1>
+            </div>
+
+            <!-- Main Content Section -->
+            <div class="content-section">
+                <div class="content-text">
+                    <h1>SAP</h1>
+                    <p>SAP provides comprehensive enterprise resource planning (ERP) solutions that allow businesses to streamline processes, improve efficiency, and enhance decision-making. It integrates all areas of business management, from finance and supply chain to human resources and procurement, into a unified system.</p>
+                    
+                    <h2 class="section-title">Core Features of SAP</h2>
+                    <p class="section-content">
+                        <ul>
+                            <li><strong>Financial Management:</strong> SAP’s financial solutions provide real-time visibility into your company’s financial health, helping you manage accounting, reporting, and planning efficiently.</li>
+                            <li><strong>Supply Chain Management:</strong> Optimizes the entire supply chain process, ensuring that businesses can meet customer demands while minimizing costs.</li>
+                            <li><strong>Human Resources:</strong> SAP’s HR modules help manage employee data, payroll, talent management, and performance evaluation.</li>
+                            <li><strong>Customer Relationship Management (CRM):</strong> Enhances customer experience by integrating sales, service, and marketing functions into a seamless platform.</li>
+                        </ul>
+                    </p>
+
+                    <h2 class="section-title">Benefits of SAP</h2>
+                    <p class="section-content">SAP offers numerous benefits, including reduced operational costs, improved data accuracy, enhanced collaboration across departments, and better regulatory compliance. By providing a unified view of the business, SAP helps organizations make data-driven decisions and adapt quickly to market changes.</p>
+                    
+                    <h2 class="section-title">Impact on Business Operations</h2>
+                    <p class="section-content">By automating and integrating business processes, SAP allows businesses to operate more efficiently, reduce redundancies, and increase visibility into key performance metrics. It supports continuous improvement by providing real-time data and analytics to managers and executives.</p>
+                </div>
+
+                <!-- Content Image (Right Side) -->
+                <div class="content-image">
+                    <img src="SAP.jpeg" alt="SAP Image"> <!-- Replace with actual image path -->
+                </div>
+            </div>
+
+            <script>
+                function goBack() {
+                    window.history.back();
+                }
+                history.pushState({ page: "SAP" }, "SAP", "#sap");
+                window.addEventListener("popstate", function (event) {
+                    if (!event.state || event.state.page !== "SAP") {
+                        location.reload();
+                    }
+                });
+            </script>
+        </body>
+        </html>
+    `;

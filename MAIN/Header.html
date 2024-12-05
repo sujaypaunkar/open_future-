@@ -1,0 +1,614 @@
+<style>@import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap';
+  html, body {
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+ 
+ 
+  * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+   
+  }
+ 
+ 
+ 
+ 
+  /*header code start */
+ 
+ 
+  /* Navbar container */
+  .navbar {
+    overflow: hidden;
+    background-color: #070d1f00; /*block color home, services that box*/
+    font-family: Arial;
+    }
+   
+    /* Links inside the navbar */
+    .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+    /* Style for the icons next to service names */
+ 
+    .service-icon {
+    width: 33px; /* Adjust size */
+    height: 33px;
+    margin-right: 8px; /* Space between the icon and text */
+    vertical-align: middle; /* Align icon with text */
+    }
+   
+    /* The dropdown container */
+    .dropdown {
+    float: left;
+    overflow: hidden;  /*header tab*/
+    font-size: 16px;
+    }
+   
+    /* Dropdown button */
+    .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+    }
+   
+    /* Add a red background color to navbar links on hover */
+    .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #3664f4;   /*select hover color dropdown*/
+    border-radius: 13px; /* Rounds the corners on hover */
+ 
+   
+  }
+   
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 100%;
+    left: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+ 
+    }
+   
+    /* Mega Menu header, if needed */
+    .dropdown-content .header {
+    background: rgb(128, 187, 199);
+    padding: 16px;
+    color: white;
+    }
+   
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+    display: block;
+    }
+   
+    /* Create three equal columns that floats next to each other */
+    .column {
+   
+    float: left;
+    width:25%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.85);  /*menu colom back color*/
+    height: 350px;
+    }
+   
+    /* Style links inside the columns */
+    .column a {
+    float: none;
+    color: white; /*text color inside menu drop down*/
+    padding: 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    }
+   
+    /* Add a background color on hover */
+    .column a:hover {
+    background-color: #3664f4; /*inside menu drop down select highligh color*/
+    }
+   
+    /* Clear floats after the columns */
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+ 
+ 
+ 
+  /*header code end here */
+  html {
+      font-size: 7px;
+      font-family: 'Montserrat', sans-serif;
+      scroll-behavior: smooth;
+  }
+ 
+  a {
+      text-decoration: none;
+  }
+ 
+  h1 {
+      font-weight: 400 !important; /* Changed to normal weight */
+      text-transform: capitalize !important;
+     
+  }
+ 
+  .container {
+     
+      min-height: 90vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+ 
+  p {
+      color: White;
+      margin-top: 5px;
+      line-height: 2.9rem;
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 0.05rem;
+  }
+ 
+  .section-title {
+      font-size: 4.5rem;
+      font-weight: 400; /* Changed to normal weight */
+      color: White;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      text-align: center;
+  }
+ 
+  .section-title span {
+      color: rgb(16, 16, 16);
+  }
+ 
+  .cta {
+      display: inline-block;
+      padding: 10px 30px;
+      color: white;
+      background-color: transparent;
+      border: 2px solid rgb(18, 17, 17);
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      margin-top: 30px;
+      transition: 0.3s ease;
+      transition-property: background-color, color;
+  }
+ 
+  .cta:hover {
+      color: white;
+      background-color: rgb(3, 3, 3);
+  }
+ 
+  .brand h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      color: white;
+  }
+ 
+  .brand h1 span {
+      color: rgb(6, 6, 6);
+  }
+ 
+  .transparent-header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: #070d1fcc; /* Semi-transparent background */
+      backdrop-filter: blur(10px); /* Optional blur effect */
+      padding: 20px;
+      z-index: 1000;
+  }
+ 
+  nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 5%;
+      padding-right: 5%;
+     
+  }
+ 
+  .logo img {
+      width: 400px; /* Adjust logo size */
+  }
+ 
+  nav ul {
+      list-style: none;
+      display: flex;
+      justify-content:space-between;
+  }
+ 
+  nav ul li {
+      margin-left: 20px;
+      font-size: 20px;
+  }
+ 
+  nav ul li a {
+      color: #fff;
+      padding: 10px 15px; /* Adjust padding for better clickable area */
+      position: relative; /* Position relative for pseudo-element */
+      text-decoration: none; /* Remove underline */
+      transition: color 0.3s; /* Smooth color transition */
+      font-weight: 400; /* Set normal weight */
+  }
+ 
+  nav ul li a:hover {
+      color: rgba(13, 13, 13, 0.767); /* Change text color on hover */
+  }
+ 
+  /* Hero Section */
+  #hero {
+      position: relative;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+  }
+ 
+  nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: relative; /* Position relative for dropdown */
+  }
+ 
+  nav ul li {
+      position: relative; /* Position relative for dropdown */
+  }
+ 
+  nav ul li a {
+      color: #ffffff; /* Default text color */
+      padding: 10px 15px; /* Adjust padding for better clickable area */
+      position: relative; /* Position relative for pseudo-element */
+      text-decoration: none; /* Remove underline */
+      transition: color 0.3s; /* Smooth color transition */
+  }
+ 
+  nav ul li a:hover {
+      color: rgb(13, 13, 13); /* Change text color on hover */
+  }
+  .service-logo {
+      width: 40px; /* Adjust width as needed */
+      height: auto; /* Keep aspect ratio */
+      margin-right: 8px; /* Space between the logo and text */
+      vertical-align: middle; /* Align the image vertically in the middle of the text */
+    }
+  nav ul li .dropdown {
+      display: none; /* Hide dropdown by default */
+      position: absolute; /* Positioning for dropdown */
+      background-color: white; /* Background color */
+      border-radius: 5px; /* Rounded corners */
+      box-shadow: 0 4px 8px rgba(25, 139, 216, 0.2); /* Shadow for dropdown */
+      z-index: 1000; /* Ensure it appears above other elements */
+      padding: 10px 0; /* Space between items */
+  }
+ 
+  nav ul li:hover .dropdown {
+      display: block; /* Show dropdown on hover */
+  }
+ 
+  nav ul li .dropdown li {
+      white-space: nowrap; /* Prevent line breaks */
+  }
+ 
+  nav ul li .dropdown li a {
+      color: #333; /* Color for dropdown items */
+      padding: 10px 20px; /* Padding for dropdown items */
+      display: block; /* Full width clickable area */
+      transition: background-color 0.3s; /* Transition for background */
+  }
+ 
+  nav ul li .dropdown li a:hover {
+      background-color: rgba(59, 59, 59, 0.50); /* Background color on hover for dropdown */
+  }
+ 
+  nav ul li .dropdown-services {
+      display: none; /* Hide dropdown by default */
+      position: absolute; /* Positioning for dropdown */
+      background-color: rgba(255, 255, 255, 0.85); /* Background color */
+      border-radius: 5px; /* Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for dropdown */
+      z-index: 1000; /* Ensure it appears above other elements */
+      padding: 10px 0; /* Space between items */
+  }
+ 
+  nav ul li:hover .dropdown-services {
+      display: block; /* Show dropdown on hover */
+  }
+ 
+  nav ul li .dropdown-services li {
+      white-space: nowrap; /* Prevent line breaks */
+  }
+ 
+  nav ul li .dropdown-services li a {
+      color: #333; /* Color for dropdown items */
+      padding: 10px 20px; /* Padding for dropdown items */
+      display: block; /* Full width clickable area */
+      transition: background-color 0.3s; /* Transition for background */
+  }
+ 
+  nav ul li .dropdown-services li a:hover {
+      background-color:  rgba(59, 59, 59, 0.50); /* Background color on hover for dropdown */
+  }
+ 
+  /* Dropdown for ABOUT Section */
+  nav ul li .dropdown {
+      display: none; /* Hidden by default */
+      position: absolute; /* Dropdown positioning */
+      background-color: rgba(255, 255, 255, 0.85); /* Dropdown background */
+      border-radius: 5px; /* Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+      z-index: 1000; /* Above other elements */
+      padding: 10px 0; /* Spacing inside dropdown */
+  }
+ 
+  nav ul li:hover .dropdown {
+      display: block; /* Show on hover */
+  }
+ 
+  nav ul li .dropdown button {
+      background-color: rgba(119, 117, 117, 0.226); /* Transparent background for buttons */
+      color: grey; /* Text color for buttons */
+      border: none; /* Remove borders */
+      padding: 10px 20px; /* Spacing inside buttons */
+      width: 100%; /* Full width buttons */
+      text-align: left; /* Align text to left */
+      font-size: 22px; /* Font size */
+      cursor: pointer; /* Cursor on hover */
+      transition: background-color 0.3s ease; /* Smooth background transition */
+  }
+ 
+  nav ul li .dropdown button:hover {
+      background-color: rgba(109, 106, 106, 0.2); /* Background change on hover */
+  }
+ 
+  #background-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      object-fit: cover; /* Ensures the video covers the entire area */
+      opacity: none; /* Adjust this for transparency */
+  }
+ 
+  .hero {
+      max-width: 1200px;
+      height: 90vh;
+      margin: 0 auto;
+      padding: 0 50px;
+      justify-content: flex-start;
+      z-index: 1;
+  }
+ 
+  #hero h1 {
+      display: block;
+      width: fit-content;
+      font-size: 20px; /* Increase title size to 20px */
+      position: relative;
+      color: transparent;
+      animation: text_reveal 0.5s ease forwards;
+      animation-delay: 1s;
+  }
+ 
+  /* Update the font size for dropdown items */
+  nav ul li .dropdown li a {
+      color: #333; /* Color for dropdown items */
+      padding: 10px 20px; /* Padding for dropdown items */
+      display: block; /* Full width clickable area */
+      transition: background-color 0.3s; /* Transition for background */
+      font-size: 18px; /* Set dropdown font size to 18px */
+  }
+ 
+  nav ul li .dropdown-services li a {
+      color: #333; /* Color for dropdown items */
+      padding: 10px 20px; /* Padding for dropdown items */
+      display: block; /* Full width clickable area */
+      transition: background-color 0.3s; /* Transition for background */
+      font-size: 18px; /* Set dropdown font size to 18px */
+  }
+ 
+  nav ul li .dropdown button {
+      font-size: 18px; /* Set button font size to 18px */
+  }
+ 
+  nav ul li .dropdown-services button {
+      font-size: 18px; /* Set button font size to 18px */
+  }/* Basic styles for the button */
+  button {
+      background-color: transparent; /* Make the background transparent */
+      color: white;                  /* White text */
+      padding: 0;                    /* Remove padding to flatten appearance */
+      margin: 0;                     /* Reset margin to avoid misalignment */
+      border: none;                  /* Remove default button borders */
+      cursor: pointer;               /* Pointer cursor on hover */
+      text-transform: uppercase;      /* Uppercase text */           /* Set to bold */
+      font-size: 22px;               /* Font size for consistency */
+      line-height: 1.5;              /* Adjust line height for better vertical alignment */
+      transition: color 0.3s ease;   /* Smooth color transition */
+  }
+ 
+ 
+  button:hover {
+      color: rgba(54, 54, 54, 0.8); /* Change text color on hover */
+  }
+ 
+ 
+ 
+  button:hover {
+      background-color: rgba(75, 74, 74, 0.226); /* Light hover effect */
+  }
+ 
+ 
+ 
+  button:hover {
+      background-color: rgba(65, 65, 65, 0.226); /* Light hover effect */
+  }</style>
+<header class="transparent-header">
+  <nav>
+    <div class="logo">
+      <img src="./brand.png" alt="Company Logo">  
+    </div>
+    <div class="navbar">
+      <a href="#home">HOME</a>
+      <div class="dropdown">
+        <button class="dropbtn">ABOUT US
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+         
+          <div class="row">
+            <div class="column">
+              <a href="javascript:void(0)" onclick="leadershipTeam()"><img src="./icons/about us icon 2.png" class="service-icon" alt="">Our leadership Team</a>
+              <a href="javascript:void(0)" onclick="openVentureCapital()"><img src="./About us/partner icon.png" class="service-icon" alt="">Our Venture Capital Portfolio</a>
+              <a href="javascript:void(0)" onclick="valueProposition()"><img src="./About us/value icon 2.png" class="service-icon" alt="">valueProposition</a>
+              <a href="#"><img src="./Services icon/murex.png" class="service-icon" alt="">Our Clientele</a>
+ 
+            </div>
+            <div class="column">
+              <a href="javascript:void(0)" onclick="ourGroupCompanies()"><img src="./About us/group of companies icon 2.png" class="service-icon" alt="">Our Group Companies</a>
+              <a href="javascript:void(0)" onclick="codeOfConduct()"><img src="./Services icon/" class="service-icon" alt="">Code of Conduct</a>
+ 
+              <a href="javascript:void(0)" onclick="safeShoreMethodology()"><img src="./Services icon/emerging-tech-project.png" class="service-icon" alt="">Safe share Methodology</a>
+              <a href="#"><img src="./Services icon/murex.png" class="service-icon" alt="">Our Partners</a>
+ 
+            </div>
+            <div class="column">
+              <a href="javascript:void(0)" onclick="Mission()"><img src="./Services icon/sap.png" class="service-icon" alt="">Our Mission </a>
+              <a href="javascript:void(0)" onclick="csr()"><img src="./Services icon/cloud-service.png" class="service-icon" alt="">Corporate Social Responsibility</a>
+              <a href="javascript:void(0)" onclick="openRIGFramework()"><img src="./Services icon/data analytics.png" class="service-icon" alt="">RIG Framework</a>
+              <a href="javascript:void(0)" onclick="awardsRecognition()"><img src="./Services icon/" class="service-icon" alt="">Award Recognition</a>
+ 
+            </div>
+            <div class="column">
+              <a href="#"><img src="./Services icon/oracle.png" class="service-icon" alt="">Our Vision</a>
+              <a href="javascript:void(0)" onclick="ourvision()"><img src=".\About us\our vision icon.png"  class="service-logo">Our Vision</a>
+              <a href="javascript:void(0)" onclick="Values()"><img src="./Services icon/infra.png" class="service-icon" alt="">Our Values</a>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+ 
+     
+ 
+      <div class="dropdown">
+        <button class="dropbtn">SERVICES
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+         
+          <div class="row">
+            <div class="column">
+              <a href="javascript:void(0)" onclick="ams()"><img src="./Services icon/ams.png" class="service-icon" alt="">AMS</a>
+              <a href="javascript:void(0)" onclick="salesforce()"><img src="./Services icon/ams.png" class="service-icon" alt="">Salesforce</a>
+                <a href="javascript:void(0)" onclick="mobility()"><img src="./Services icon/ams.png" class="service-icon" alt="">Mobility</a>
+                  <a href="javascript:void(0)" onclick="geospatial()"><img src="./Services icon/ams.png" class="service-icon" alt="">Geospatial Services</a>
+                  <a href="javascript:void(0)" onclick="bpo()"><img src="./Services icon/ams.png" class="service-icon" alt="">Business Process Outsourcing</a>
+            </div>
+            <div class="column">
+              <a href="javascript:void(0)" onclick="erpCrm()"><img src="./Services icon/ams.png" class="service-icon" alt="">ERP & CRM</a>
+                <a href="javascript:void(0)" onclick="murex()"><img src="./Services icon/ams.png" class="service-icon" alt="">Murex</a>
+                  <a href="javascript:void(0)" onclick="emergingTech()"><img src="./Services icon/ams.png" class="service-icon" alt="">Emerging Tech & Project</a>
+                    <a href="javascript:void(0)" onclick="communication()"><img src="./Services icon/ams.png" class="service-icon" alt="">Communication Services</a>
+                    <a href="javascript:void(0)" onclick="testing()"><img src="./Services icon/ams.png" class="service-icon" alt="">Testing Services</a>
+ 
+            </div>
+            <div class="column">
+              <a href="javascript:void(0)" onclick="sap()"><img src="./Services icon/ams.png" class="service-icon" alt="">SAP </a>
+                <a href="javascript:void(0)" onclick="cloudServices()"><img src="./Services icon/ams.png" class="service-icon" alt="">Cloud Services</a>
+                  <a href="javascript:void(0)" onclick="dataAnalytics()"><img src="./Services icon/ams.png" class="service-icon" alt="">Data Analystics</a>
+                    <a href="javascript:void(0)" onclick="siteReliability()"><img src="./Services icon/ams.png" class="service-icon" alt="">Site Reliability Engineering & DevOps</a>
+                    <a href="javascript:void(0)" onclick="training()"><img src="./Services icon/ams.png" class="service-icon" alt="">Training Services</a>
+            </div>
+            <div class="column">
+              <a href="javascript:void(0)" onclick="oracle()"><img src="./Services icon/ams.png" class="service-icon" alt="">Oracle</a>
+              <a href="javascript:void(0)" onclick="managedServices()"><img src="./Services icon/ams.png" class="service-icon" alt="">Professional & Managed Services</a>
+              <a href="javascript:void(0)" onclick="infrastructure()"><img src="./Services icon/ams.png" class="service-icon" alt="">Infrastructure Management Seervices</a>
+                <a href="javascript:void(0)" onclick="consulting()"><img src="./Services icon/ams.png" class="service-icon" alt="">Consulting Services</a>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+ 
+      <a href="javascript:void(0)" onclick="showBlogs()">BLOGS</a>
+ 
+      <a href="./careers/careers.html">CAREERS</a>
+ 
+ 
+ 
+ 
+ 
+ 
+      <div class="dropdown">
+        <button class="dropbtn">INDUSTRIES
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+         
+          <div class="row">
+            <div class="column">
+              <a href="javascript:void(0)" onclick="BFSI()"><img src="./Services icon/ams.png" class="service-icon" alt="">BFSI</a>
+              <a href="javascript:void(0)" onclick="Manufacturing()"><img src="./Services icon/ams.png" class="service-icon" alt="">Manufacturing</a>
+              <a href="javascript:void(0)" onclick="Telecom()"><img src="./Services icon/ams.png" class="service-icon" alt="">Telecom</a>
+              <a href="javascript:void(0)" onclick="ComputingSoftware()"><img src="./Services icon/ams.png" class="service-icon" alt="">Computing Software</a>
+              <a href="javascript:void(0)" onclick="Automotive()"><img src="./Services icon/ams.png" class="service-icon" alt="">Automotive</a>
+            </div>
+            <div class="column">
+              <a href="javascript:void(0)" onclick="ConsumerElectronics()"><img src="./Services icon/ams.png" class="service-icon" alt="">Consumer Electronics</a>
+              <a href="javascript:void(0)" onclick="Energy()"><img src="./Services icon/ams.png" class="service-icon" alt="">Energy</a>
+              <a href="javascript:void(0)" onclick="Healthcare()"><img src="./Services icon/ams.png" class="service-icon" alt="">Healthcare</a>
+              <a href="javascript:void(0)" onclick="MediaEntertainmentServices()"><img src="./Services icon/ams.png" class="service-icon" alt="">Media & Entertainment Services</a>
+              <a href="javascript:void(0)" onclick="Retail()"><img src="./Services icon/ams.png" class="service-icon" alt="">Retail</a>
+ 
+            </div>
+            <div class="column">
+              <a href="javascript:void(0)" onclick="TravelTourism()"><img src="./Services icon/ams.png" class="service-icon" alt="">Travel & Tourism </a>
+              <a href="javascript:void(0)" onclick="Logistics()"><img src="./Services icon/ams.png" class="service-icon" alt="">Logistics</a>
+              <a href="javascript:void(0)" onclick="Education()"><img src="./Services icon/ams.png" class="service-icon" alt="">Education</a>
+              <a href="javascript:void(0)" onclick="Ecommerce()"><img src="./Services icon/ams.png" class="service-icon" alt="">E-commerce</a>
+              <a href="javascript:void(0)" onclick="Agriculture()"><img src="./Services icon/ams.png" class="service-icon" alt="">Agriculture</a>
+            </div>
+            <div class="column">
+              <a href="javascript:void(0)" onclick="Fintech()"><img src="./Services icon/ams.png" class="service-icon" alt="">Fintech</a>
+              <a href="javascript:void(0)" onclick="GovernmentPublicSector()"><img src="./Services icon/ams.png" class="service-icon" alt="">Government & Public Sector</a>
+              <a href="javascript:void(0)" onclick="Insurance()"><img src="./Services icon/ams.png" class="service-icon" alt="">Insurance</a>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+ 
+ 
+      <a href="./feedback/feedback.html" data-after="Feedback">FEEDBACK</a>
+ 
+   
+    </div>    
+</header>
+</div>
+ 
+ 

@@ -1,0 +1,373 @@
+<style>
+	#footer .footer {
+	min-height: 100px;
+	flex-direction: column;
+	padding: 10px 20px;
+}
+
+#footer h2 {
+	color: #f1c40f; /* Changed heading color to a vibrant yellow */
+	font-size: medium;
+	font-weight: 500;
+	font-size: 2.5rem; 
+	-webkit-text-fill-color: #f1f1f1;
+	letter-spacing: 0.1rem;
+	margin: 10px 0; 
+	text-align: center;
+}
+/* Styling for the contact info section */
+.contact-info {
+    text-align: right; /* Centers the content */
+    flex: 1; /* Ensures the container takes up available space */
+}
+
+.contact-info h1 {
+    margin-bottom: 20px; /* Adds spacing below the heading */
+}
+
+/* Styling for the contact icons */
+.contact-link {
+    margin: 0 15px; /* Adds space between the icons */
+}
+
+.contact-icon {
+    width: 50px; /* Set the width for the icon */
+    height: 50px; /* Set the height for the icon */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.contact-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+#footer .social-item {
+    display: inline-flex;
+    position: relative;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0); /* Fully transparent background */
+    padding: 5px; /* Optional padding */
+    border-radius: 50%; /* Keeps the background in a circular shape if you want it */
+}
+
+#footer .social-item img {
+    transition: 0.3s ease filter, 0.3s ease opacity;
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%;
+    opacity: 0.7; /* Makes images partially transparent */
+}
+
+#footer .social-item:hover img {
+    filter: grayscale(0);
+    opacity: 1; /* Removes transparency on hover */
+}
+
+
+#footer p {
+	color: #ecf0f1; /* Changed paragraph text color to a light grey */
+	font-size: 1.1rem; 
+	text-align: center; 
+	margin: 10px 0; 
+}
+
+/* General footer styling */
+:root {
+    --footer-bg-color: #0b3d91; /* Example dark blue background */
+    --footer-text-color: #ecf0f1;
+    --footer-heading-color: #f1c40f;
+    --footer-subheading-color: #bdc3c7;
+}
+.services-section ul li a {
+	color: white; /* Replace with your desired color, e.g., #333333 for dark gray */
+	text-decoration: none; /* This removes the underline from the links */
+  }
+  
+  .services-section ul li a:hover {
+	color: white; /* Optional: Change color on hover */
+  }
+  
+  .services-section ul li a:visited {
+	color: white; /* Optional: Change color for visited links */
+  }
+
+#footer {
+	color: var(--footer-text-color); /* Use variable or specific color */
+	padding: 40px;
+	font-family: 'Arial', sans-serif;
+	background-image: url(77.png); 
+	background-size: cover;
+	background-position: right;
+	background-repeat: no-repeat;
+}
+
+#footer .footer-logo img {
+	width: 100%; 
+	position: relative;
+	bottom: 50px;
+}
+
+#footer .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: right;
+}
+
+.footer h1 {
+	font-size: 32px; 
+	font-weight: bold;
+	text-align: left;
+	color: var(--footer-heading-color); /* Use variable */
+}
+
+.footer h2 {
+	font-size: 24px; 
+	text-align: left;
+	color: var(--footer-text-color);
+}
+
+ul li img {
+	width: 20px; /* Adjust as necessary */
+	height: auto;
+	margin-right: 5px;
+	vertical-align: middle;
+  }
+  
+
+ul li {
+	list-style: none;
+	font-size: 22px;
+	text-align: left;
+	padding: 8px 0; /* Adds a bit more padding */
+	color: var(--footer-text-color);
+}
+
+.main-content {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 40px;
+}
+
+.services-section,
+.solutions-section,
+.our-story-section ul li a {
+	color: white; /* Replace with your desired color, e.g., #333333 for dark gray */
+	text-decoration: none; /* This removes the underline from the links */
+  }
+  
+  .our-story-section ul li a:hover {
+	color: white; /* Optional: Change color on hover */
+  }
+  
+  .our-story-section ul li a:visited {
+	color: white; /* Optional: Change color for visited links */
+  }
+
+  .solutions-section ul li a {
+	color: white; /* Replace with your desired color, e.g., #333333 for dark gray */
+	text-decoration: none; /* This removes the underline from the links */
+  }
+  
+  .solutions-section ul li a:hover {
+	color: white; /* Optional: Change color on hover */
+  }
+  
+  .solutions-section ul li a:visited {
+	color: white; /* Optional: Change color for visited links */
+  }
+  
+
+  #footer .social-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    opacity: 1; /* Set to 1 to ensure icons are visible */
+    filter: grayscale(0) !important; /* Ensure icons are not grayscale */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smoother transition */
+}
+
+#footer .social-item:hover img {
+    opacity: 1; /* Ensure full opacity on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+#footer .social-item {
+    display: inline-flex;
+    position: relative;
+    margin: 0 10px; /* Increase space for better visibility */
+    padding: 10px; /* Padding for better spacing */
+    background-color: rgba(255, 255, 255, 0); /* Transparent background */
+    border-radius: 50%;
+    z-index: 1; /* Ensure it's on top of other elements */
+}
+
+/* Optional: Add background color to the icon container to make it stand out more */
+#footer .social-item:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Light background on hover */
+}
+
+
+
+.footer-menu ul li {
+	list-style: none;
+	font-size: 22px;
+	color: var(--footer-text-color);
+}
+
+#footer p {
+	width: 150%; /* Full width of the footer */
+	height: 1px; /* Line thickness */
+	background-color: #cdc9c980; /* Line color */
+	margin-bottom: 15px; /* Space between line and text */
+  }
+  
+  #footer p {
+	text-align: center;
+	margin-top: 80px; /* Controls the space above the text */
+	font-size: 18px;
+	color: var(--footer-subheading-color);
+  }
+  
+  
+  
+.social-item a:hover img {
+	filter: brightness(0.8);
+}
+
+
+/* Responsive design adjustments for smaller screens */
+@media (max-width: 768px) {
+	.main-content {
+		flex-direction: column;
+		text-align: left;
+	}
+
+	.services-section,
+	.solutions-section,
+	.our-story-section {
+		padding: 10px;
+	}
+	.ABCD{
+	font-weight: 400 !important; /* Changed to normal weight */
+    text-transform: capitalize !important;
+    color: rgb(236, 224, 9) !important;
+	}
+}
+
+</style><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer Section</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<section id="footer">
+		<div class="ABCD">
+		<div class="footer container" style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
+	   
+	   
+		<!-- Main content section with flexbox layout -->
+		<div class="main-content" style="display: flex; justify-content: space-between; margin-top: 40px;">
+	   
+		  <!-- Services section (left) -->
+		  <div class="services-section" style="flex: 1; text-align: left; padding-right: 20px;">
+			<div class="footer-logo">
+			  <div id="contentArea"></div>
+			  <img src="./brand.png" alt="">
+			</div>
+			<ul>
+			  <ul>
+				<li><a href="javascript:void(0)" onclick="ourStory()">Our Story</a></li>
+				<li><a href="javascript:void(0)" onclick="ourGlobalPresence()">Our Global Presence</a></li>
+				<li><a href="javascript:void(0)" onclick="ourPortfolioCompanies()">Our Portfolio Companies</a></li>
+				<li><a href="javascript:void(0)" onclick="ourPartners()">Our Partners</a></li>
+				<li><a href="./careers/careers.html">CAREERS</a></li>
+				<li><a href="javascript:void(0)" onclick="awardsRecognition()">Awards & Recognition</a></li>
+			</ul>
+			<script src="app.js"></script>
+		   
+	   
+		  </div>
+	   
+		  <!-- Solutions section (middle) -->
+		  <div class="solutions-section" style="flex: 1; text-align: center; padding: 0 20px;"> <!-- Changed text-align to center -->
+			<h1 style="font-size: 25px; font-weight: 700;">Solutions</h1>
+			<ul style="list-style: none; padding: 0;"> <!-- Added padding reset for list -->
+			  <li><a href="javascript:void(0)" onclick="deepTech()">Deep-Tech AI Solutions</a></li>
+			  <li><a href="javascript:void(0)" onclick="recruitment()">Recruitment Solution</a></li>
+			  <li><a href="javascript:void(0)" onclick="gis()">Geographic Information System</a></li>
+			  <li><a href="javascript:void(0)" onclick="businessManagement()">Business Management Solution</a></li>
+			  <li><a href="javascript:void(0)" onclick="aiMlBanking()">AI and ML Banking Solutions</a></li>
+			  <li><a href="javascript:void(0)" onclick="conversationalAI()">Conversational AI</a></li>
+			  <li><a href="javascript:void(0)" onclick="cloudTelephony()">Cloud Telephony</a></li>
+			  <li><a href="javascript:void(0)" onclick="unifiedSecrets()">Unified Secrets Management Platform</a></li>
+			  <li><a href="javascript:void(0)" onclick="noCodeEcommerce()">No-Code eCommerce Solution</a></li>
+			  <li><a href="javascript:void(0)" onclick="bankInApp()">A Bank in Any App</a></li>
+			  <li><a href="javascript:void(0)" onclick="noCodeWorkflow()">No-Code Workflow Automation and CRM</a></li>
+			</ul>
+		</div>
+	   
+		  <!-- Our Story section (right) -->
+		  <div class="our-story-section" style="flex: 1; text-align: left; padding-left: 0 20px;">
+			<h1 style="font-size: 25px; font-weight: 700;">Services</h1>
+			<ul>
+			  <li></li>
+			  <li><a href="javascript:void(0)" onclick="ams()">AMS</a></li>
+		  <li><a href="javascript:void(0)" onclick="erpCrm()">ERP & CRM</a></li>
+		  <li><a href="javascript:void(0)" onclick="sap()">SAP</a></li>
+		  <li><a href="javascript:void(0)" onclick="oracle()">Oracle</a></li>
+		  <li><a href="javascript:void(0)" onclick="salesforce()">Salesforce</a></li>
+		  <li><a href="javascript:void(0)" onclick="murex()">Murex</a></li>
+		  <li><a href="javascript:void(0)" onclick="cloudServices()">Cloud Services</a></li>
+		  <li><a href="javascript:void(0)" onclick="managedServices()">Professional & Managed Services</a></li>
+		  <li><a href="javascript:void(0)" onclick="mobility()">Mobility</a></li>
+		  <li><a href="javascript:void(0)" onclick="emergingTech()">Emerging Tech & Projects</a></li>
+		  <li><a href="javascript:void(0)" onclick="dataAnalytics()">Data Analytics</a></li>
+	   
+		  </div>
+		  <div class="our-story-section" style="flex: 1; text-align: left; padding-left: 0 20px;">
+			<ul>
+			  <li><a href="javascript:void(0)" onclick="infrastructure()">Infrastructure Management Services</a></li>
+			  <li><a href="javascript:void(0)" onclick="geospatial()">Geospatial Services</a></li>
+			  <li><a href="javascript:void(0)" onclick="communication()">Communication Services</a></li>
+			  <li><a href="javascript:void(0)" onclick="siteReliability()">Site Reliability Engineering & DevOps</a></li>
+			  <li><a href="javascript:void(0)" onclick="consulting()">Consulting Services</a></li>
+			  <li><a href="javascript:void(0)" onclick="bpo()">Business Process Outsourcing</a></li>
+			  <li><a href="javascript:void(0)" onclick="testing()">Testing Services</a></li>
+			  <li><a href="javascript:void(0)" onclick="training()">Training Services</a></li>
+			</ul>
+		  </div>
+	   
+	   
+		  <!-- Footer closing -->
+	   
+	   
+		<!-- Social icons -->
+		<div class="contact-info" style="flex: 1; text-align: center;">
+		  <h1>Contact Info</h1>
+		 
+	  <div class="social-icon"> <!-- Added a wrapper for social icons -->
+		  <div class="social-item">
+			  <a href="https://www.instagram.com/openfuture_technologies/"><img src="insta icon (1).png" alt="Instagram" /></a>
+		  </div>
+		  <div class="social-item">
+			<a href="mailto:info@openfuturetech.com"><img src="mail icon.png" alt ="Email" /></a>
+		  </div>
+		  <div class="social-item">
+			  <a href="tel:+91-7219389550"><img src="call icon png (2).png" alt="WhatsApp" /></a>
+		  </div>
+		  <div class="social-item">
+			<a href="https://www.linkedin.com/in/openfuture-technologies-private-limited-173724307/?originalSubdomain=in"><img src="link.jpg" alt="linkdin" /></a>
+		</div>
+	  </div>
+	  </div>
+	   
+	   
+		</div>
+		<!-- Footer copyright -->
+		<p>Copyright © 2024 OpenFuture. All rights reserved</p>
+	  </section>
+	  </body>
+	   
+	  </html>
+	   

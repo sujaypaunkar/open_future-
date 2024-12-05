@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Future Registration Form</title>
+    <link rel="stylesheet" href="Apply.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+ 
+
+<body>
+    <div class="transparent-container">
+
+ <div class="form-container">
+    <h2>Apply Now</h2>
+    <form id="applicantForm">
+        <div class="input-box">
+            <label for="fullName">Full Name<span class="required">*</span></label>
+            <input type="text" id="fullName" placeholder="Enter your name" required>
+        </div>
+        <div class="input-box">
+            <label for="phone">Phone Number<span class="required">*</span></label>
+            <input type="tel" id="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" maxlength="10" required>
+        </div>
+        <div class="input-box">
+            <label for="email">Email<span class="required">*</span></label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="input-box">
+            <label for="jobtitle">JobTitle<span class="required">*</span></label>
+            <input type="text" id="jobtitle" placeholder="Enter your jobtitle" required>
+        </div>
+        <div class="input-box">
+            <label for="experience">Experience<span class="required">*</span></label>
+            <input type="text" id="experience" placeholder="Enter years of experience" required>
+        </div>
+        <div class="input-box">
+            <label for="skills">Skills<span class="required">*</span></label>
+            <input type="text" id="skills" placeholder="Enter your skills" required>
+        </div>
+        
+        <div class="input-box">
+            <label for="resume">Upload Resume<span class="required">*</span></label>
+            <input type="file" id="resume" accept=".pdf,.doc,.docx" required>
+        </div>
+        <div class="gender-box">
+            <label for="gender">Gender<span class="required">*</span></label>
+            <label>
+                <input type="radio" name="gender" value="Male" required> Male
+            </label>
+            <label>
+                <input type="radio" name="gender" value="Female" required> Female
+            </label>
+            <label>
+                <input type="radio" name="gender" value="Other" required> Other
+            </label>
+        </div>
+        <div class="button-box">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+<script>
+   document.getElementById("applicantForm").addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    // Collect form data
+    const fullName = document.getElementById("fullName").value;
+    const phoneNumber = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
+    const jobTitle = document.getElementById("jobtitle").value;
+    const experience = document.getElementById("experience").value;
+    const gender = document.querySelector("input[name='gender']:checked").value;
+    const skills = document.getElementById("skills").value;
+    const resumeFile = document.getElementById("resume").files[0];
+
+    // Validate file size (Optional)
+    if (resumeFile.size > 10 * 1024 * 1024) { // 2 MB
+            alert("File size should not exceed 2 MB.");
+            return;
+        }
+
+    // Create a FormData object
+    const formData = new FormData();
+    formData.append("file", resumeFile); // Attach the file as 'file'
+    
+    // Add ApplicantDTO data as JSON string
+    const applicantDTO = {
+        fullName: fullName,
+        phoneNumber: phoneNumber,
+        email: email,
+        jobTitle: jobTitle,
+        experience: experience,
+        gender: gender,
+        skills: skills
+    };
+
+    formData.append("applicantDTO", new Blob([JSON.stringify(applicantDTO)], { type: "application/json" }));
+    formData.append("file", resumeFile);
+
+
+    try {
+        // Send the form data to the server
+        const response = await fetch("http://localhost:8800/application/saveApplicantInformation", {
+            method: "POST",
+            body: formData
+        });
+
+        if (response.ok) {
+            const result = await response.text();
+            alert(result); // Success message from the server
+        } else {
+            const error = await response.text();
+            alert("Failed to submit application: " + error);
+        }
+    } catch (error) {
+        console.error("Error submitting form:", error);
+        alert("An error occurred while submitting your application.");
+    }
+});
+
+</script>
+</body>
+</html>
